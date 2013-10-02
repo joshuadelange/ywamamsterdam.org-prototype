@@ -1,5 +1,7 @@
 $backgroundColor: #f7f7f7;
 $highlightColor: #e4001c;
+$faded: #A1A1A1;
+$border: #CECECE;
 
 body, h1, h2, h3, h4, h5, h6, ul, li {
 	margin: 0;
@@ -37,7 +39,7 @@ header {
 	background-size: 100%;
 
 	.logo {
-		width: 200px;
+		width: 250px;
 		height: 100px;
 
 		float: left;
@@ -72,20 +74,25 @@ header {
 
 	nav {
 		float: right;
+		padding-top: 20px;
 
 		ul li {
+
 			display: inline-block;
-			margin-right: 10px;
+			margin-right: 30px;
 
 			a {
-				font-size: 18px;
+				font-size: 20px;
 				color: white;
 				text-decoration: none;
+				border: none;
+	
+				&:hover {
+					color: white;
+					border-bottom: 1px solid white;
+				}
 			}
 
-			&:hover {
-				border-bottom: 1px solid white;
-			}
 		}
 	}
 
@@ -110,14 +117,17 @@ header {
 }
 
 p {
+
 	width: 700px;
 	font-family: "HelveticaNeue-Light", sans-serif;
 	color: #313131;
 
-	margin: 0;
-
 	& + p {
 		margin-bottom: 50px;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
 	}
 
 	&.quote {
@@ -148,18 +158,86 @@ p {
 		}
 	}
 
+	&.label {
+		margin: 0;
+		font-size: 15px;
+		line-height: 10px;
+		font-style: italic;
+
+		color: $faded;
+
+		&:after {
+			content: ":"
+		}
+	
+		& + .value {
+			font-size: 25px;
+			line-height: 40px;
+
+			margin: 0;
+			margin-bottom: 20px;
+		}
+	
+	}
+
 }
 
-p + img {
-	border: 3px solid #f5f5f5;
+a {
+	color: $highlightColor;
+	text-decoration: none;
+	border-bottom: 1px solid $highlightColor;
 
-	& + .caption {
-		margin: 0;
-		color: #777777;
-		font-style: italic;
-		font-size: 14px;
-		line-height: 14px;
+	&.btn {
+
+		display: inline-block;
+
+		margin-top: 10px;
+		padding: 2px 15px;
+
+		border: 1px solid $highlightColor;
+		border-radius: 5px;
+
 	}
+
+	&:hover {
+		color: darken($highlightColor, 10%);
+		border-color: darken($highlightColor, 10%);
+	}
+
+}
+
+h3 {
+	display: inline-block;
+	margin-top: 30px;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+}
+
+table {
+
+	width: 700px;
+	padding: 20px 0;
+
+	td, th {
+		font-size: 16px;
+		line-height: 25px;
+		border-bottom: 1px solid #e0e0e0;
+
+		&:first-child {
+			width: 350px;
+		}
+	}
+
+	th {
+		border-bottom: 1px solid $border;
+		font-weight: 100;
+		text-align: left;
+		font-style: italic;
+		color: $faded;
+	}
+
 }
 
 section {
@@ -169,9 +247,10 @@ section {
 
 	aside {
 		float: right;
-		width: 260px;
-		padding: 30px;
-		background-color: #dbdbdb;
+		clear: right;
+		width: 300px;
+		border-left: 1px solid $border;
+		padding-left: 25px;
 
 		p {
 			width: 100%;
@@ -179,6 +258,14 @@ section {
 
 		img {
 			width: 100%;
+
+			& + .caption {
+				margin: 0;
+				color: $faded;
+				font-style: italic;
+				font-size: 14px;
+				line-height: 14px;
+			}
 		}
 
 	}
@@ -193,14 +280,22 @@ section {
 	}
 
 	&.grid {
-		padding: 0;
+
+		margin: 50px 0;
+		padding: .5% 0 .1%;
+		background-color: #1d1e19;
 
 		.tile {
 
+			cursor: pointer;
+
 			position: relative;
 
-			width: 33.3333%;
+			width: 33.1333%;
 			height: 170px;
+
+			margin-left: .2%;
+			margin-bottom: .2%;
 
 			overflow: hidden;
 			float: left;
