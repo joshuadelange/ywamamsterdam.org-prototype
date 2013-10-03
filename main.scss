@@ -373,7 +373,6 @@ section {
 
 			& + .caption {
 				margin-top: 0;
-				margin-bottom: 0;
 			}
 
 		}
@@ -470,8 +469,9 @@ section {
 
 	&.grid {
 
-		margin: 50px 0;
-		padding: 20px 0;
+		margin: 25px 0;
+		padding: 50px;
+		padding-bottom: 0;
 		background-color: #1d1e19;
 
 		.tile {
@@ -480,42 +480,57 @@ section {
 
 			position: relative;
 
-			width: 33.3333%;
-			height: 170px;
+			width: 31.3333%;
+			height: 200px;
+			margin-right: 2%;
 
-			overflow: hidden;
+			margin-bottom: 70px;
+
 			float: left;
 
 			background-color: black;
+
+			-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow:    0 0 10px rgba(0, 0, 0, 0.75);
+			box-shadow:         0 0 10px rgba(0, 0, 0, 0.75);
 
 			h3 {
 				font-family: "Novecentowide-Normal" ;
 
 				position: absolute;
 
-				color: white;
+				color: #cccccc;
 				font-weight: 100;
 
 				left: 20px;
-				bottom: 10px;
+				bottom: 15px;
 
 				z-index: 100;
 				text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 
-
+				padding-bottom: 2px;
 			}
 
-			img {
-				width: 100%;
-				height: auto;
-				margin: 0;
+			.image {
 
-				opacity: .8;
+				width: auto;
+				height: 200px;
 
-				-webkit-transition: opacity .25s ease-out;
-				   -moz-transition: opacity .25s ease-out;
-					 -o-transition: opacity .25s ease-out;
-						transition: opacity .25s ease-out;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: auto;
+					margin: 0;
+
+					opacity: .6;
+
+					-webkit-transition: opacity .25s ease-out;
+					   -moz-transition: opacity .25s ease-out;
+						 -o-transition: opacity .25s ease-out;
+							transition: opacity .25s ease-out;
+				}
+
 			}
 
 
