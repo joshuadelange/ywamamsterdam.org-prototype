@@ -97,10 +97,15 @@ header {
 .video-wrapper {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
   height: 710px;
   overflow: hidden; }
+  .video-wrapper img {
+    width: 100%; }
   .video-wrapper video {
+    display: none;
     width: 100%; }
 
 h2 {

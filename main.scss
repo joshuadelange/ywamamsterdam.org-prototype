@@ -113,12 +113,19 @@ header {
 
 	position: absolute;
 	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 0;
 
 	height: 710px;
 	overflow: hidden;
 
+	img {
+		width: 100%;
+	}
+
 	video {
+		display: none; //shown when loaded
 		width: 100%;
 	}
 }
