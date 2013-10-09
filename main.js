@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+  $('footer .y').click(function(){
+    console.log('doubleclick!') ;
+    $('body').append('<img src="rboss.jpg" class="rboss">') ;
+    $('.rboss').animate({left: '78.5%'}) ;
+    setTimeout(function(){
+      $('.rboss').animate({left: '100%'}, function(){
+        $('.rboss').remove() ;
+      }) ;
+    }, 2000)
+  }) ;
+
   $(window).scroll(function(ev){
     var headerHeight = 720,
         scrollTop = $(document).scrollTop(),
