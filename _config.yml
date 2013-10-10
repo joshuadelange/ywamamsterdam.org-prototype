@@ -1,3 +1,4 @@
 name: ywamamsterdam.org Prototype
 markdown: redcarpet
 pygments: true
+baseurl: /ywamamsterdam.org-prototype
