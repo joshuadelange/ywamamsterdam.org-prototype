@@ -33,6 +33,13 @@
   src: url("fonts/288B00_0_0.eot");
   src: url("fonts/288B00_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B00_0_0.woff") format("woff"), url("fonts/288B00_0_0.ttf") format("truetype"); }
 
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
 body, h1, h2, h3, h4, h5, h6, ul, li {
   margin: 0;
   padding: 0; }
@@ -486,9 +493,45 @@ footer {
     float: left;
     clear: left; }
 
-.rboss {
-  width: 40px;
-  position: relative;
-  bottom: 140px;
-  left: 100%;
-  z-index: 0; }
+.frontpage .icon {
+  height: 420px; }
+  .frontpage .icon.lightbulb .glow {
+    position: relative;
+    top: -420px; }
+  .frontpage .icon.lightbulb:hover .glow {
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate; }
+  .frontpage .icon.map {
+    position: relative; }
+    .frontpage .icon.map img {
+      position: relative;
+      top: 0;
+      z-index: 50; }
+    .frontpage .icon.map .dots {
+      position: relative; }
+    .frontpage .icon.map [class*="dot-"] {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      background-color: #e4001c;
+      border-radius: 5px;
+      z-index: 100;
+      -webkit-transform: scale(1);
+      -webkit-transition: .5s all ease-in; }
+      .frontpage .icon.map [class*="dot-"].dot-1 {
+        top: 180px;
+        left: 150px; }
+      .frontpage .icon.map [class*="dot-"].dot-2 {
+        top: 230px;
+        left: 230px; }
+      .frontpage .icon.map [class*="dot-"].dot-3 {
+        top: 195px;
+        left: 150px; }
+      .frontpage .icon.map [class*="dot-"].dot-4 {
+        top: 195px;
+        left: 144px; }
+    .frontpage .icon.map:hover [class*="dot-"] {
+      -webkit-transform: scale(2); }

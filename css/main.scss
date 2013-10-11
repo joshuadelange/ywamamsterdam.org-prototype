@@ -7,6 +7,16 @@
 @font-face {font-family: 'Novecentowide-Medium';src: url('fonts/288B04_0_0.eot');src: url('fonts/288B04_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/288B04_0_0.woff') format('woff'),url('fonts/288B04_0_0.ttf') format('truetype');}
 @font-face {font-family: 'Novecentowide-Bold';src: url('fonts/288B00_0_0.eot');src: url('fonts/288B00_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/288B00_0_0.woff') format('woff'),url('fonts/288B00_0_0.ttf') format('truetype');}
 
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 $backgroundColor: #f7f7f7;
 $highlightColor: #e4001c;
 $faded: #C9C9C9;
@@ -756,11 +766,91 @@ footer {
 
 }
 
-.rboss {
-	width: 40px;
-	position: relative;
-	bottom: 140px;
-	left: 100%;
-	// margin-top: -610px;
-	z-index: 0;
+.frontpage {
+
+	.icon {
+
+		height: 420px;
+
+		&.lightbulb {
+
+			.glow {
+				position: relative;
+				top: -420px;
+				// -webkit-transition: all 1s ease ;
+			}
+
+			&:hover {
+
+				.glow {
+					-webkit-animation-duration: 1.5s;
+					-webkit-animation-name: fadeOut;
+					-webkit-animation-timing-function: ease-out;
+					-webkit-animation-iteration-count: infinite;
+					-webkit-animation-direction: alternate;
+				}
+
+			}
+
+		}
+
+		&.map {
+
+			position: relative;
+
+			img {
+				position: relative;
+				top: 0;
+				z-index: 50;
+			}
+
+			.dots {
+				position: relative;
+			}
+
+			[class*="dot-"] {
+
+				position: relative;
+				width: 10px;
+				height: 10px;
+				background-color: $highlightColor;
+				border-radius: 5px;
+				z-index: 100;
+				-webkit-transform: scale(1) ;
+				-webkit-transition: .5s all ease-in ;
+
+				&.dot-1 {
+					top: 180px;
+					left: 150px;
+				}
+
+				&.dot-2 {
+					top: 230px;
+					left: 230px;
+				}
+
+				&.dot-3 {
+					top: 195px;
+					left: 150px;
+				}
+
+				&.dot-4 {
+					top: 195px;
+					left: 144px;
+				}
+
+			}
+
+			&:hover {
+
+				[class*="dot-"] {
+					-webkit-transform: scale(2) ;
+				}
+
+			}
+
+		}
+
+	}
+
 }
