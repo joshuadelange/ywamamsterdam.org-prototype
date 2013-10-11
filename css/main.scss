@@ -851,6 +851,17 @@ footer {
 
 		}
 
+		&.couch {
+
+			img:first-child {
+				margin-top: 160px;
+			}
+
+			.rboss {
+				display: none;
+			}
+		}
+
 	}
 
 }

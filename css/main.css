@@ -535,3 +535,7 @@ footer {
         left: 144px; }
     .frontpage .icon.map:hover [class*="dot-"] {
       -webkit-transform: scale(2); }
+  .frontpage .icon.couch img:first-child {
+    margin-top: 160px; }
+  .frontpage .icon.couch .rboss {
+    display: none; }
