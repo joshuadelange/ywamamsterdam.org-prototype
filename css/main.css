@@ -113,10 +113,10 @@ header {
   header h1 {
     font-family: "Novecentowide-Normal";
     color: #f0f0f0;
-    position: relative;
+    position: absolute;
+    bottom: 50px;
     z-index: 100;
     width: 300px;
-    margin-top: 370px;
     font-size: 50px;
     line-height: 50px;
     font-weight: 100;
@@ -417,6 +417,17 @@ section {
     padding-bottom: 20px;
     background-color: #1d1e19;
     overflow: hidden; }
+    section.grid h3:first-child {
+      display: block;
+      clear: both;
+      margin-bottom: 40px;
+      margin-top: -50px;
+      margin-left: -50px;
+      margin-right: -50px;
+      padding: 50px;
+      padding-left: 100px;
+      padding-bottom: 20px;
+      background-color: #f7f7f7; }
     section.grid .tile {
       cursor: pointer;
       position: relative;
@@ -433,6 +444,7 @@ section {
       section.grid .tile h3 {
         font-family: "Novecentowide-Normal";
         position: absolute;
+        margin: 0;
         color: #cccccc;
         font-weight: 100;
         left: 20px;
@@ -472,7 +484,7 @@ section {
           width: 100%;
           height: auto;
           margin: 0;
-          opacity: .6;
+          opacity: .7;
           -webkit-transition: opacity .25s ease-out;
           -moz-transition: opacity .25s ease-out;
           -o-transition: opacity .25s ease-out;

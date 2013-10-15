@@ -1,25 +1,5 @@
 $(document).ready(function(){
 
-  $('[data-filter]').click(function(){
-    var $this = $(this),
-        filter = $this.data('filter'),
-        filterClass = '.category-' + filter ;
-
-    console.log(filter) ;
-
-    if(filter !== 'all') {
-      console.log('filtering on', filterClass) ;
-      $('.tile:not(' + filterClass + ')').fadeOut() ;
-      $(filterClass).fadeIn() ;
-    }
-    else{
-      console.log('showing all') ;
-      $('.tile').fadeIn() ;
-    }
-  
-
-  }) ;
-
   $(window).scroll(function(ev){
 
     var headerHeight = 720,
