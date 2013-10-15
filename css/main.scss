@@ -23,6 +23,7 @@ $faded: #C9C9C9;
 $fadedBackground: #DFDFDF;
 $border: #CECECE;
 $darkBackgroundColor: #1d1e19;
+$bodyColor: #313131;
 
 body, h1, h2, h3, h4, h5, h6, ul, li {
 	margin: 0;
@@ -320,7 +321,7 @@ p {
 
 	width: 700px;
 	font-family: "HelveticaNeue-Light", sans-serif;
-	color: #313131;
+	color: $bodyColor;
 
 	& + p {
 		margin-bottom: 50px;
@@ -474,6 +475,26 @@ section {
 	// &:first-of-type {
 	//  margin-top: 710px;
 	// }
+
+	ul {
+
+		li {
+			list-style-type: none;
+			
+
+			a {
+				display: block;
+				padding: 5px 0;
+				color: $bodyColor;
+				border-bottom: 1px solid #e0e0e0;
+
+				&:hover {
+					border-bottom: 1px solid #e0e0e0;				
+				}
+			}
+		}
+
+	}
 
 	img {
 

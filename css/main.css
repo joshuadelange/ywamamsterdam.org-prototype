@@ -306,6 +306,15 @@ section {
   padding: 50px 100px;
   background-color: #f7f7f7;
   z-index: 1000; }
+  section ul li {
+    list-style-type: none; }
+    section ul li a {
+      display: block;
+      padding: 5px 0;
+      color: #313131;
+      border-bottom: 1px solid #e0e0e0; }
+      section ul li a:hover {
+        border-bottom: 1px solid #e0e0e0; }
   section img {
     margin: 50px 0; }
     section img + .caption {
