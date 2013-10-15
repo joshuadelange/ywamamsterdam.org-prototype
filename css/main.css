@@ -86,7 +86,8 @@ nav {
         padding-bottom: 0;
         font-family: "Novecentowide-Light"; }
         nav ul li a:hover {
-          color: white; }
+          color: white;
+          border-bottom-color: white; }
         nav ul li a.with-white-bg {
           font-family: "Novecentowide-Normal";
           font-size: 15px;
@@ -259,6 +260,9 @@ p {
       line-height: 40px;
       margin: 0;
       margin-bottom: 20px; }
+    p.label.large {
+      font-size: 20px;
+      font-style: normal; }
 
 a {
   color: #e4001c;
@@ -411,7 +415,8 @@ section {
   section.grid {
     padding: 50px;
     padding-bottom: 20px;
-    background-color: #1d1e19; }
+    background-color: #1d1e19;
+    overflow: hidden; }
     section.grid .tile {
       cursor: pointer;
       position: relative;
@@ -421,6 +426,7 @@ section {
       margin-bottom: 30px;
       float: left;
       background-color: black;
+      border-bottom: 0;
       -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.75); }
@@ -449,6 +455,15 @@ section {
           -o-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
+      section.grid .tile.with-slogan h3 {
+        bottom: 30px; }
+      section.grid .tile.with-slogan p {
+        position: absolute;
+        left: 20px;
+        bottom: 7px;
+        z-index: 100;
+        color: #aeaeae;
+        font-size: 17px; }
       section.grid .tile .image {
         width: auto;
         height: 200px;

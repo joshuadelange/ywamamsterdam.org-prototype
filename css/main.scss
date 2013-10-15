@@ -91,6 +91,7 @@ nav {
 
 				&:hover {
 					color: white;
+					border-bottom-color: white;
 				}
 	
 				&.with-white-bg {
@@ -386,6 +387,11 @@ p {
 			margin: 0;
 			margin-bottom: 20px;
 		}
+
+		&.large {
+			font-size: 20px;
+			font-style: normal;
+		}
 	
 	}
 
@@ -480,7 +486,7 @@ section {
 
 		li {
 			list-style-type: none;
-			
+
 
 			a {
 				display: block;
@@ -643,6 +649,7 @@ section {
 		padding: 50px;
 		padding-bottom: 20px;
 		background-color: $darkBackgroundColor;
+		overflow: hidden;
 
 		.tile {
 
@@ -659,6 +666,7 @@ section {
 			float: left;
 
 			background-color: black;
+			border-bottom: 0;
 
 			-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
 			-moz-box-shadow:    0 0 10px rgba(0, 0, 0, 0.75);
@@ -702,6 +710,21 @@ section {
 
 				}
 
+			}
+
+			&.with-slogan {
+				h3 {
+					bottom: 30px;
+				}
+
+				p {
+					position: absolute;
+					left: 20px;
+					bottom: 7px;
+					z-index: 100;
+					color: #aeaeae;
+					font-size: 17px;
+				}
 			}
 
 			.image {
