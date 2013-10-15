@@ -483,6 +483,8 @@ section {
 
 	ul {
 
+		margin-bottom: 25px;
+
 		li {
 			list-style-type: none;
 
@@ -863,6 +865,10 @@ footer {
 	.icon {
 
 		height: 420px;
+
+		img {
+			width: auto;
+		}
 
 		&.lightbulb {
 
