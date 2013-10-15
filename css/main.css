@@ -221,7 +221,7 @@ h2 {
   text-align: center; }
 
 p {
-  width: 700px;
+  width: 600px;
   font-family: "HelveticaNeue-Light", sans-serif;
   color: #313131; }
   p + p {
@@ -320,6 +320,7 @@ section {
       section ul li a:hover {
         border-bottom: 1px solid #e0e0e0; }
   section img {
+    width: 100%;
     margin: 50px 0; }
     section img + .caption {
       margin: 0;
@@ -329,6 +330,17 @@ section {
       font-style: italic;
       font-size: 18px;
       line-height: 25px; }
+      section img + .caption + .slogan {
+        font-family: "Novecentowide-Normal";
+        color: #f0f0f0;
+        position: absolute;
+        bottom: 75px;
+        left: 100px;
+        z-index: 100;
+        width: 300px;
+        font-size: 50px;
+        line-height: 50px;
+        text-shadow: 0px 0px 20px black; }
   section video {
     width: 100%;
     height: auto; }
@@ -344,7 +356,8 @@ section {
       margin: 0;
       width: 100%; }
       section aside img + .caption {
-        margin-top: 0; }
+        margin-top: 0;
+        margin-bottom: 0; }
   section .separator {
     width: 100%;
     height: 1px;
@@ -356,6 +369,8 @@ section {
     section.full-width .map {
       width: 100%;
       height: 500px; }
+    section.full-width .caption {
+      margin-left: 100px; }
   section.slideshow {
     padding: 20px 0;
     background-color: #1d1e19;
@@ -507,6 +522,9 @@ section {
         background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); }
+      section.grid .tile.plain:after {
+        background: transparent;
+        filter: none; }
   section:after {
     content: '';
     display: block;
