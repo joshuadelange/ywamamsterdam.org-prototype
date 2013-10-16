@@ -1,12 +1,9 @@
 @font-face {
-  font-family: 'Code-Pro-Demo';
-  src: url("fonts/288AFE_0_0.eot");
-  src: url("fonts/288AFE_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/288AFE_0_0.woff") format("woff"), url("fonts/288AFE_0_0.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Code-Pro-Light-Demo';
-  src: url("fonts/288AFE_1_0.eot");
-  src: url("fonts/288AFE_1_0.eot?#iefix") format("embedded-opentype"), url("fonts/288AFE_1_0.woff") format("woff"), url("fonts/288AFE_1_0.ttf") format("truetype"); }
+  font-family: 'Expressway';
+  src: url("fonts/expressway_rg-webfont.eot");
+  src: url("fonts/expressway_rg-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/expressway_rg-webfont.woff") format("woff"), url("fonts/expressway_rg-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: 'Novecentowide-Light';
@@ -14,24 +11,9 @@
   src: url("fonts/288B1C_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B1C_0_0.woff") format("woff"), url("fonts/288B1C_0_0.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'Novecentowide-Book';
-  src: url("fonts/288B1C_1_0.eot");
-  src: url("fonts/288B1C_1_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B1C_1_0.woff") format("woff"), url("fonts/288B1C_1_0.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'Novecentowide-Normal';
   src: url("fonts/288B1C_2_0.eot");
   src: url("fonts/288B1C_2_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B1C_2_0.woff") format("woff"), url("fonts/288B1C_2_0.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Novecentowide-Medium';
-  src: url("fonts/288B04_0_0.eot");
-  src: url("fonts/288B04_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B04_0_0.woff") format("woff"), url("fonts/288B04_0_0.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Novecentowide-Bold';
-  src: url("fonts/288B00_0_0.eot");
-  src: url("fonts/288B00_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/288B00_0_0.woff") format("woff"), url("fonts/288B00_0_0.ttf") format("truetype"); }
 
 @-webkit-keyframes fadeOut {
   from {
@@ -111,14 +93,15 @@ header {
   background-position: center top;
   background-size: 100%; }
   header h1 {
-    font-family: "Novecentowide-Normal";
+    font-family: "Expressway", sans-serif;
     color: #f0f0f0;
     position: absolute;
     bottom: 50px;
     z-index: 100;
     width: 300px;
+    text-transform: uppercase;
     font-size: 50px;
-    line-height: 50px;
+    line-height: 60px;
     font-weight: 100;
     clear: both;
     word-break: keep-all;
@@ -141,12 +124,14 @@ header {
 
 h2 {
   color: #252525;
-  font-family: "Novecentowide-Medium";
+  font-family: "Expressway";
   font-size: 90px;
+  text-transform: uppercase;
   line-height: 110px;
+  text-align: center;
   font-weight: 100;
   clear: both;
-  margin-bottom: 70px; }
+  margin-bottom: 10px; }
 
 .gradient-wrapper {
   position: absolute;
@@ -247,6 +232,13 @@ p {
       font-style: italic; }
       p.quote + .source:before {
         content: "– "; }
+    p.quote.full-width {
+      font-size: 35px;
+      width: 100%;
+      text-align: center; }
+      p.quote.full-width + .source {
+        width: 100%;
+        text-align: center; }
   p.label {
     margin: 0;
     font-size: 15px;
@@ -279,8 +271,10 @@ a {
     border-color: #b10016; }
 
 h3 {
-  font-family: "Novecentowide-Bold";
+  font-family: "Expressway", Georgia;
   color: #333333;
+  font-weight: 100;
+  text-transform: uppercase;
   display: inline-block;
   margin-top: 30px; }
   h3 + p {
@@ -327,21 +321,21 @@ section {
     section img + .caption {
       margin: 0;
       margin-top: -50px;
-      margin-bottom: 50px;
       color: #c9c9c9;
       font-style: italic;
       font-size: 18px;
       line-height: 25px; }
       section img + .caption + .slogan {
-        font-family: "Novecentowide-Normal";
+        font-family: "Expressway", sans-serif;
         color: #f0f0f0;
         position: absolute;
         bottom: 75px;
         left: 100px;
         z-index: 100;
-        width: 300px;
-        font-size: 50px;
-        line-height: 50px;
+        text-transform: uppercase;
+        width: 75%;
+        font-size: 80px;
+        line-height: 90px;
         text-shadow: 0px 0px 20px black; }
   section video {
     width: 100%;
@@ -459,7 +453,7 @@ section {
       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.75); }
       section.grid .tile h3 {
-        font-family: "Novecentowide-Normal";
+        font-family: "Expressway";
         position: absolute;
         margin: 0;
         color: #cccccc;
@@ -527,6 +521,65 @@ section {
       section.grid .tile.plain:after {
         background: transparent;
         filter: none; }
+  section.thumbnails {
+    padding: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #f7f7f7; }
+    section.thumbnails .thumbnail {
+      cursor: pointer;
+      position: relative;
+      top: 0;
+      width: 31.3333%;
+      height: 200px;
+      margin-right: 2%;
+      margin-bottom: 30px;
+      float: left;
+      border-bottom: 0;
+      overflow: hidden; }
+      section.thumbnails .thumbnail h3 {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 10px; }
+      section.thumbnails .thumbnail h4 {
+        font-family: "Expressway";
+        text-transform: uppercase;
+        position: absolute;
+        margin: 0;
+        color: #f1f1f1;
+        font-weight: normal;
+        left: 20px;
+        bottom: 15px;
+        z-index: 100;
+        text-shadow: 0px 0px 10px black;
+        padding-bottom: 2px; }
+        section.thumbnails .thumbnail h4:after {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 10px;
+          right: -20px;
+          border-right: 2px solid white;
+          border-top: 2px solid white;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+      section.thumbnails .thumbnail .image img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        opacity: .9; }
+      section.thumbnails .thumbnail .tile {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none; }
+        section.thumbnails .thumbnail .tile img {
+          opacity: .9; }
   section:after {
     content: '';
     display: block;
