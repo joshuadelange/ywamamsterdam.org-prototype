@@ -83,15 +83,15 @@ nav {
 			a {
 				display: inline-block;
 				font-size: 17px;
-				color: white;
+				color: #efefef;
 				text-decoration: none;
-				border-bottom: 1px solid white;
+				border-bottom: 1px solid #a4a4a4;
 				padding-bottom: 0;
 				font-family: "Novecentowide-Light";
 
 				&:hover {
 					color: white;
-					border-bottom-color: white;
+					border-bottom-color: #efefef;
 				}
 	
 				&.with-white-bg {
