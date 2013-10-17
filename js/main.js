@@ -8,6 +8,10 @@ $(document).ready(function(){
         marginTop = 20 - scrollTop,
         reverseOpacity = 0.95 - opacity ;
 
+    if(reverseOpacity === -Infinity) {
+      reverseOpacity = 0;
+    }
+
     if(marginTop > 0){
       $('.top').css('marginTop', 20 - scrollTop + 'px') ;
     }

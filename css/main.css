@@ -39,7 +39,8 @@ body {
   left: 0;
   right: 0;
   height: 30px;
-  padding: 10px 230px;
+  margin-top: 20px;
+  padding: 10px 50px;
   z-index: 1000000;
   border-bottom: 2px solid transparent; }
   .top .logo {
