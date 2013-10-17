@@ -39,7 +39,7 @@ body {
   left: 0;
   right: 0;
   height: 30px;
-  padding: 10px 100px;
+  padding: 10px 230px;
   z-index: 1000000;
   border-bottom: 2px solid transparent; }
   .top .logo {
@@ -98,7 +98,7 @@ header {
     position: absolute;
     bottom: 50px;
     z-index: 100;
-    width: 300px;
+    width: 400px;
     text-transform: uppercase;
     font-size: 50px;
     line-height: 60px;
@@ -125,13 +125,12 @@ header {
 h2 {
   color: #252525;
   font-family: "Expressway";
-  font-size: 90px;
+  font-size: 100px;
+  line-height: 100px;
   text-transform: uppercase;
-  line-height: 110px;
-  text-align: center;
   font-weight: 100;
   clear: both;
-  margin-bottom: 10px; }
+  margin-bottom: 40px; }
 
 .gradient-wrapper {
   position: absolute;
@@ -160,6 +159,7 @@ h2 {
     -ms-transform: rotate(180deg);
     transform: rotate(180deg); }
   .gradient-wrapper .gradient-corner {
+    display: none;
     height: 700px;
     position: absolute;
     top: 0;
@@ -178,6 +178,9 @@ h2 {
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
+
+.clear {
+  clear: both; }
 
 .columns:after {
   content: '';
@@ -201,16 +204,15 @@ h2 {
     width: 25%; }
   .columns [class*="column-"] p, .columns [class*="column-"] table {
     width: 100%; }
+  .columns [class*="column-"] table.calendar {
+    width: 60%; }
 
 .centered {
   text-align: center; }
 
 p {
-  width: 600px;
   font-family: "HelveticaNeue-Light", sans-serif;
   color: #313131; }
-  p + p {
-    margin-bottom: 50px; }
   p small {
     color: #636363; }
   p.centered {
@@ -280,14 +282,17 @@ h3 {
   h3 + p {
     margin-top: 10px; }
 
+.muted {
+  color: #c9c9c9; }
+
 table {
   width: 700px;
+  border-spacing: 0;
+  border-collapse: collapse;
   padding: 20px 0; }
   table td, table th {
     padding: 15px 0;
     border-bottom: 1px solid #e0e0e0; }
-    table td:first-child, table th:first-child {
-      width: 500px; }
   table th {
     border-bottom: 1px solid #cecece;
     font-weight: 100;
@@ -297,17 +302,33 @@ table {
   table.condensed {
     padding: 0; }
     table.condensed td, table.condensed th {
-      padding: 10px 0; }
+      padding: 0; }
+  table.calendar {
+    margin: 20px 0;
+    font-size: 15px; }
+    table.calendar td, table.calendar th {
+      text-align: center; }
+    table.calendar .marked {
+      background-color: #FF6679;
+      color: white; }
 
 section {
   position: relative;
-  padding: 50px 100px;
+  padding: 50px 230px;
   background-color: #f7f7f7;
   z-index: 1000; }
+  section.wide {
+    padding: 50px; }
   section ul {
     margin-bottom: 25px; }
     section ul li {
       list-style-type: none; }
+      section ul li .muted {
+        display: inline-block;
+        margin-top: 7px;
+        margin-right: 10px;
+        font-size: 17px;
+        float: left; }
       section ul li a {
         display: block;
         padding: 5px 0;
@@ -330,7 +351,7 @@ section {
         color: #f0f0f0;
         position: absolute;
         bottom: 75px;
-        left: 100px;
+        left: 230px;
         z-index: 100;
         text-transform: uppercase;
         width: 75%;
@@ -340,12 +361,16 @@ section {
   section video {
     width: 100%;
     height: auto; }
+  section .right {
+    float: right;
+    max-width: 60%; }
   section aside {
     float: right;
     clear: right;
-    width: 300px;
+    width: 30%;
     border-left: 1px solid #cecece;
-    padding-left: 25px; }
+    margin-left: 3%;
+    padding-left: 2%; }
     section aside p {
       width: 100%; }
     section aside img {
@@ -354,6 +379,15 @@ section {
       section aside img + .caption {
         margin-top: 0;
         margin-bottom: 0; }
+    section aside.left {
+      float: left;
+      border-left: none;
+      border-right: 1px solid #cecece;
+      margin: 0;
+      padding: 2%;
+      margin-right: 2%;
+      clear: left;
+      background-color: #dfdfdf; }
   section .separator {
     width: 100%;
     height: 1px;
@@ -366,7 +400,7 @@ section {
       width: 100%;
       height: 500px; }
     section.full-width .caption {
-      margin-left: 100px; }
+      margin-left: 230px; }
   section.slideshow {
     padding: 20px 0;
     background-color: #1d1e19;
@@ -413,7 +447,7 @@ section {
       transform: rotate(45deg); }
     section.slideshow .image-wrapper {
       width: 100000%;
-      margin-left: 100px; }
+      margin-left: 230px; }
       section.slideshow .image-wrapper img {
         width: 1000px;
         float: left;
@@ -436,7 +470,7 @@ section {
       margin-left: -50px;
       margin-right: -50px;
       padding: 50px;
-      padding-left: 100px;
+      padding-left: 230px;
       padding-bottom: 20px;
       background-color: #f7f7f7; }
     section.grid .tile {
@@ -521,40 +555,51 @@ section {
       section.grid .tile.plain:after {
         background: transparent;
         filter: none; }
-  section.thumbnails {
-    padding: 100px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background-color: #f7f7f7; }
-    section.thumbnails .thumbnail {
+  section.strokes {
+    padding: 0 50px;
+    padding-bottom: 40px;
+    background-color: #1d1e19;
+    overflow: hidden; }
+    section.strokes .stroke {
       cursor: pointer;
       position: relative;
-      top: 0;
-      width: 31.3333%;
-      height: 200px;
-      margin-right: 2%;
-      margin-bottom: 30px;
+      width: 100%;
+      height: 300px;
+      margin-top: 50px;
       float: left;
+      background-color: black;
       border-bottom: 0;
-      overflow: hidden; }
-      section.thumbnails .thumbnail h3 {
-        position: relative;
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.75); }
+      section.strokes .stroke h3 {
+        position: absolute;
+        top: 25px;
+        right: 25px;
         margin: 0;
-        padding: 0;
-        padding-bottom: 10px; }
-      section.thumbnails .thumbnail h4 {
+        color: #A3A3A3;
+        z-index: 1000;
+        clear: both;
+        display: block;
+        margin-bottom: 10px; }
+      section.strokes .stroke h4 {
         font-family: "Expressway";
-        text-transform: uppercase;
         position: absolute;
         margin: 0;
-        color: #f1f1f1;
-        font-weight: normal;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #D5D5D5;
+        font-weight: 100;
         left: 20px;
-        bottom: 15px;
+        bottom: 35px;
         z-index: 100;
         text-shadow: 0px 0px 10px black;
-        padding-bottom: 2px; }
-        section.thumbnails .thumbnail h4:after {
+        padding-bottom: 2px;
+        -webkit-transform: scale(1);
+        -webkit-transform-origin: left bottom;
+        -webkit-transition: -webkit-transform 1s ease-out; }
+        section.strokes .stroke h4:after {
           content: "";
           display: block;
           width: 10px;
@@ -569,17 +614,103 @@ section {
           -o-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
-      section.thumbnails .thumbnail .image img {
+      section.strokes .stroke p {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        z-index: 100;
+        color: #D5D5D5;
+        font-size: 20px;
+        margin: 0; }
+        section.strokes .stroke p.month {
+          text-align: right;
+          right: 20px;
+          left: auto;
+          color: #c1c1c1;
+          text-transform: uppercase; }
+      section.strokes .stroke .image {
         width: 100%;
-        height: auto;
-        margin: 0;
-        opacity: .9; }
-      section.thumbnails .thumbnail .tile {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none; }
-        section.thumbnails .thumbnail .tile img {
+        height: 300px;
+        position: relative;
+        top: 0;
+        overflow: hidden; }
+        section.strokes .stroke .image img {
+          position: relative;
+          top: 0;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          margin-top: -250px;
+          opacity: .7;
+          -webkit-transform: scale(1);
+          -webkit-transition: opacity .25s ease-out, -webkit-transform 1.5s ease-out; }
+      section.strokes .stroke:hover img {
+        opacity: 1;
+        -webkit-transform: scale(1.05); }
+      section.strokes .stroke:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-color: red;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); }
+      section.strokes .stroke.plain:after {
+        background: transparent;
+        filter: none; }
+  section.thumbnails {
+    padding: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #f7f7f7; }
+    section.thumbnails .thumbnail {
+      cursor: pointer;
+      position: relative;
+      top: 0;
+      width: 31.3333%;
+      height: 350px;
+      margin-right: 2%;
+      margin-bottom: 50px;
+      float: left;
+      border-bottom: 0; }
+      section.thumbnails .thumbnail .image {
+        height: 200px;
+        margin-top: 40px;
+        overflow: hidden; }
+        section.thumbnails .thumbnail .image img {
+          width: 100%;
+          height: auto;
+          margin: 0;
           opacity: .9; }
+      section.thumbnails .thumbnail h3 {
+        color: #c9c9c9;
+        position: relative;
+        margin: 0;
+        font-family: "Novecentowide-Light";
+        font-weight: 100;
+        padding: 0;
+        padding-bottom: 10px; }
+        section.thumbnails .thumbnail h3 + .image {
+          margin-top: 0; }
+      section.thumbnails .thumbnail h4 {
+        font-family: "Expressway";
+        text-transform: uppercase;
+        margin-top: 20px;
+        color: #313131;
+        font-weight: bold; }
+      section.thumbnails .thumbnail p {
+        margin-top: 0;
+        width: auto; }
+      section.thumbnails .thumbnail:hover h4 {
+        color: #e4001c; }
   section:after {
     content: '';
     display: block;
@@ -588,14 +719,14 @@ section {
 footer {
   display: relative;
   height: 350px;
-  padding: 50px 100px;
+  padding: 50px;
   color: #dfdfdf;
   overflow: hidden;
   background-color: #dfdfdf;
   background-image: url("../images/samsinn.png");
   background-size: 70%;
   background-repeat: no-repeat;
-  background-position: 80% 50px; }
+  background-position: 90% 50px; }
   footer p {
     width: 40%;
     margin-bottom: 0;
