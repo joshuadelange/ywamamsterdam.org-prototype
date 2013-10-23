@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Expressway';
   src: url("fonts/expressway_rg-webfont.eot");
@@ -713,6 +714,47 @@ section {
         width: auto; }
       section.thumbnails .thumbnail:hover h4 {
         color: #e4001c; }
+  section.circles {
+    padding: 0;
+    padding-bottom: 50px; }
+    section.circles .circle {
+      width: 23%;
+      height: 100%;
+      float: left;
+      padding: 0 5%;
+      padding-bottom: 70px;
+      color: #313131;
+      text-align: center;
+      border-bottom: none; }
+      section.circles .circle .image {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        border-radius: 300px;
+        overflow: hidden; }
+        section.circles .circle .image img {
+          width: auto;
+          height: 100%;
+          margin: 0;
+          -webkit-transition: all .7s ease; }
+      section.circles .circle h4 {
+        display: inline-block;
+        border-bottom: 1px solid transparent; }
+      section.circles .circle p {
+        margin: 0; }
+        section.circles .circle p:first-of-type {
+          height: 50px; }
+      section.circles .circle .quarter {
+        font-style: italic;
+        font-size: 18px;
+        color: #646464;
+        margin-top: 10px; }
+      section.circles .circle:hover h4 {
+        border-bottom: 1px solid #313131; }
+      section.circles .circle:hover img {
+        height: 105%;
+        margin-left: -10%; }
   section:after {
     content: '';
     display: block;

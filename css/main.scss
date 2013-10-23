@@ -1,3 +1,5 @@
+@charset "UTF-8" ;
+
 @font-face {font-family: 'Expressway'; src: url('fonts/expressway_rg-webfont.eot'); src: url('fonts/expressway_rg-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/expressway_rg-webfont.woff') format('woff'), url('fonts/expressway_rg-webfont.ttf') format('truetype'); font-weight: normal; font-style: normal;}
 @font-face {font-family: 'Novecentowide-Light';src: url('fonts/288B1C_0_0.eot');src: url('fonts/288B1C_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/288B1C_0_0.woff') format('woff'),url('fonts/288B1C_0_0.ttf') format('truetype');}
 // @font-face {font-family: 'Novecentowide-Book';src: url('fonts/288B1C_1_0.eot');src: url('fonts/288B1C_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/288B1C_1_0.woff') format('woff'),url('fonts/288B1C_1_0.ttf') format('truetype');}
@@ -105,7 +107,6 @@ nav {
 					}
 				}
 			}
-
 
 		}
 
@@ -1183,6 +1184,76 @@ section {
 
 		}
 
+	}
+
+	&.circles {
+		padding: 0;
+		padding-bottom: 50px;
+
+		.circle {
+			width: 23%;
+			height: 100%;
+
+			float: left;
+
+			padding: 0 5%;
+			padding-bottom: 70px;
+
+			color: $bodyColor;
+			text-align: center;
+
+			border-bottom: none;
+
+			.image {
+				width: 300px;
+				height: 300px;
+
+				margin: 0 auto;
+				margin-bottom: 30px;
+
+				border-radius: 300px;
+				overflow: hidden;
+
+				img {
+					width: auto;
+					height: 100%;
+					margin: 0;
+					-webkit-transition: all .7s ease;
+				}
+			}
+
+			h4 {
+				display: inline-block;
+				border-bottom: 1px solid transparent;
+			}
+
+			p {
+				margin: 0;
+
+				&:first-of-type {
+					height: 50px;
+				}
+			}
+
+			.quarter {
+				font-style: italic;
+				font-size: 18px;
+				color: lighten($bodyColor, 20%) ;
+				margin-top: 10px;
+			}
+
+			&:hover {
+
+				h4 {
+					border-bottom: 1px solid $bodyColor;
+				}
+
+				img {
+					height: 105%;
+					margin-left: -10%;
+				}
+			}
+		}
 	}
 
 	&:after {
