@@ -721,11 +721,16 @@ section {
       width: 23%;
       height: 100%;
       float: left;
+      margin-top: -1px;
       padding: 0 5%;
-      padding-bottom: 70px;
+      padding-bottom: 35px;
+      padding-top: 35px;
       color: #313131;
       text-align: center;
-      border-bottom: none; }
+      border: 1px solid #DDDDDD;
+      border-right: none; }
+      section.circles .circle.pushed-in {
+        margin-left: 15%; }
       section.circles .circle .image {
         width: 300px;
         height: 300px;
@@ -739,6 +744,7 @@ section {
           margin: 0;
           -webkit-transition: all .7s ease; }
       section.circles .circle h4 {
+        font-size: 25px;
         display: inline-block;
         border-bottom: 1px solid transparent; }
       section.circles .circle p {
