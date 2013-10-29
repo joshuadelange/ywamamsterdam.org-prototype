@@ -249,6 +249,12 @@ p {
       p.quote.full-width + .source {
         width: 100%;
         text-align: center; }
+    p.quote.large {
+      text-align: center;
+      font-size: 35px;
+      line-height: 40px;
+      width: 60%;
+      padding: 0 20%; }
   p.label {
     margin: 0;
     font-size: 15px;
@@ -328,6 +334,11 @@ section {
   z-index: 1000; }
   section.wide {
     padding: 50px; }
+  section.center {
+    text-align: center; }
+  section h3 {
+    display: block;
+    clear: both; }
   section ul {
     margin-bottom: 25px; }
     section ul li {
@@ -348,6 +359,11 @@ section {
         display: block;
         color: #313131;
         border: none; }
+  section .image {
+    position: relative; }
+    section .image img {
+      margin: 0;
+      margin-bottom: 50px; }
   section img {
     width: 100%;
     margin: 50px 0; }
@@ -362,7 +378,7 @@ section {
         font-family: "Expressway", sans-serif;
         color: #f0f0f0;
         position: absolute;
-        bottom: 75px;
+        bottom: 50px;
         left: 230px;
         z-index: 100;
         text-transform: uppercase;
@@ -370,6 +386,11 @@ section {
         font-size: 80px;
         line-height: 90px;
         text-shadow: 0px 0px 20px black; }
+        section img + .caption + .slogan.medium {
+          width: 60%;
+          left: 20%;
+          font-size: 50px;
+          line-height: 70px; }
   section video {
     width: 100%;
     height: auto; }
@@ -406,7 +427,9 @@ section {
     height: 1px;
     margin-bottom: 30px;
     padding-bottom: 70px;
-    border-bottom: 1px solid #dfdfdf; }
+    border-bottom: 1px solid #dfdfdf;
+    clear: both;
+    display: block; }
   section.full-width {
     padding: 0; }
     section.full-width .map {
@@ -475,6 +498,9 @@ section {
     padding-bottom: 20px;
     background-color: #1d1e19;
     overflow: hidden; }
+    section.grid.condensed {
+      padding: 25px;
+      padding-bottom: 0; }
     section.grid h3:first-child {
       display: block;
       clear: both;
@@ -503,28 +529,13 @@ section {
         font-family: "Expressway";
         position: absolute;
         margin: 0;
-        color: #cccccc;
+        color: white;
         font-weight: 100;
         left: 20px;
         bottom: 15px;
         z-index: 100;
         text-shadow: 0px 0px 10px black;
         padding-bottom: 2px; }
-        section.grid .tile h3:after {
-          content: "";
-          display: block;
-          width: 10px;
-          height: 10px;
-          position: absolute;
-          top: 10px;
-          right: -20px;
-          border-right: 2px solid white;
-          border-top: 2px solid white;
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
-          -o-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg); }
       section.grid .tile.with-slogan h3 {
         bottom: 30px; }
       section.grid .tile.with-slogan p {
@@ -542,11 +553,13 @@ section {
           width: 100%;
           height: auto;
           margin: 0;
-          opacity: .7;
+          opacity: .9;
           -webkit-transition: opacity .25s ease-out;
           -moz-transition: opacity .25s ease-out;
           -o-transition: opacity .25s ease-out;
           transition: opacity .25s ease-out; }
+        section.grid .tile .image.portrait img {
+          margin-top: -50px; }
       section.grid .tile:hover img {
         opacity: 1; }
       section.grid .tile:after {
@@ -727,6 +740,9 @@ section {
   section.circles {
     padding: 0;
     padding-bottom: 50px; }
+    section.circles > h3 {
+      margin-left: 5%;
+      margin-bottom: 30px; }
     section.circles .circle {
       width: 23%;
       height: 100%;
@@ -755,6 +771,9 @@ section {
           height: 100%;
           margin: 0;
           -webkit-transition: all .7s ease; }
+        section.circles .circle .image.portrait img {
+          width: 100%;
+          height: auto; }
       section.circles .circle h4 {
         font-size: 25px;
         display: inline-block;
@@ -770,15 +789,18 @@ section {
         margin-top: 10px; }
       section.circles .circle:hover h4 {
         border-bottom: 1px solid #313131; }
-      section.circles .circle:hover img {
+      section.circles .circle:hover .image img {
         height: 105%;
         margin-left: -5%; }
+      section.circles .circle:hover .image.portrait img {
+        width: 105%;
+        height: auto; }
     section.circles.small {
       padding-top: 20px;
       padding-bottom: 0; }
       section.circles.small .circle {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        width: 14%;
+        padding: 20px 5%;
         border-top: none;
         border-bottom: none; }
         section.circles.small .circle:first-of-type {
@@ -790,9 +812,22 @@ section {
           height: 180px;
           border-radius: 180px; }
         section.circles.small .circle p:first-of-type {
-          height: auto;
-          margin-top: 20px;
-          margin-bottom: 20px; }
+          height: 90px; }
+    section.circles.horizontal .circle {
+      width: 400px;
+      padding: 20px 2.5%; }
+      section.circles.horizontal .circle .image {
+        width: 150px;
+        height: 150px;
+        float: left; }
+      section.circles.horizontal .circle .text {
+        width: 250px;
+        float: right;
+        text-align: right; }
+      section.circles.horizontal .circle p:first-of-type {
+        height: auto;
+        margin-top: 30px;
+        color: #c9c9c9; }
   section:after {
     content: '';
     display: block;
