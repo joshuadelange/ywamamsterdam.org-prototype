@@ -723,20 +723,22 @@ section {
       float: left;
       margin-top: -1px;
       padding: 0 5%;
-      padding-bottom: 35px;
-      padding-top: 35px;
+      padding-bottom: 55px;
+      padding-top: 55px;
       color: #313131;
       text-align: center;
       border: 1px solid #DDDDDD;
       border-right: none; }
       section.circles .circle.pushed-in {
         margin-left: 15%; }
+      section.circles .circle:last-of-type {
+        border-right: 1px solid #DDDDDD; }
       section.circles .circle .image {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         margin: 0 auto;
         margin-bottom: 30px;
-        border-radius: 300px;
+        border-radius: 250px;
         overflow: hidden; }
         section.circles .circle .image img {
           width: auto;
@@ -750,7 +752,7 @@ section {
       section.circles .circle p {
         margin: 0; }
         section.circles .circle p:first-of-type {
-          height: 50px; }
+          height: 70px; }
       section.circles .circle .quarter {
         font-style: italic;
         font-size: 18px;
@@ -760,7 +762,7 @@ section {
         border-bottom: 1px solid #313131; }
       section.circles .circle:hover img {
         height: 105%;
-        margin-left: -10%; }
+        margin-left: -5%; }
   section:after {
     content: '';
     display: block;
