@@ -309,6 +309,17 @@ h2 {
 			}
 		}
 
+		&.column-3-2 {
+			$column3-2Width: 66%;
+			width: $column3-2Width - $columnPadding;
+			margin-right: $columnPadding;
+
+			&:last-child {
+				width: $column3-2Width;
+				margin-right: 0;
+			}
+		}
+
 		&.column-4 {
 			$column4Width: 25%;
 			width: $column4Width;
@@ -499,10 +510,12 @@ table {
 	}
 
 	&.calendar {
-		margin: 20px 0;
+
+		margin-top: -20px;
 		font-size: 15px;
 
 		td, th {
+			padding: 20px;
 			text-align: center;
 		}
 
@@ -535,27 +548,30 @@ section {
 
 		li {
 			list-style-type: none;
+			padding: 10px 0;
 
-			.muted {
-				display: inline-block;
-				margin-top: 7px;
-				margin-right: 10px;
-				font-size: 17px;
-				float: left;
+			border-bottom: 1px solid #e0e0e0;
 
-				& + a {
-				}
+			&:hover {
+				border-bottom: 1px solid #e0e0e0;				
+			}
+
+			.caption {
+				display: block;
+				width: 100%;
+				color: $faded;
+				font-size: 15px;
+			}
+
+			.subtitle {
+				display: block;
+				font-size: 18px;
 			}
 
 			a {
 				display: block;
-				padding: 5px 0;
 				color: $bodyColor;
-				border-bottom: 1px solid #e0e0e0;
-
-				&:hover {
-					border-bottom: 1px solid #e0e0e0;				
-				}
+				border: none;
 			}
 		}
 
@@ -1269,6 +1285,41 @@ section {
 					height: 105%;
 					margin-left: -5%;
 				}
+			}
+		}
+
+		&.small {
+			padding-top: 20px;
+			padding-bottom: 0;
+
+			.circle {
+
+				padding-top: 20px;
+				padding-bottom: 20px;
+
+				border-top: none;
+				border-bottom: none;
+
+				&:first-of-type {
+					border-left: none;
+				}
+
+				&:last-of-type {
+					border-right: none;
+				}
+
+				.image {
+					width: 180px;
+					height: 180px;
+					border-radius: 180px;
+				}
+
+				p:first-of-type {
+					height: auto;
+					margin-top: 20px;
+					margin-bottom: 20px;
+				}
+
 			}
 		}
 	}

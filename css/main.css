@@ -202,6 +202,12 @@ h2 {
     .columns [class*="column-"].column-3:last-child {
       width: 33%;
       margin-right: 0; }
+  .columns [class*="column-"].column-3-2 {
+    width: 61%;
+    margin-right: 5%; }
+    .columns [class*="column-"].column-3-2:last-child {
+      width: 66%;
+      margin-right: 0; }
   .columns [class*="column-"].column-4 {
     width: 25%; }
   .columns [class*="column-"] p, .columns [class*="column-"] table {
@@ -306,9 +312,10 @@ table {
     table.condensed td, table.condensed th {
       padding: 0; }
   table.calendar {
-    margin: 20px 0;
+    margin-top: -20px;
     font-size: 15px; }
     table.calendar td, table.calendar th {
+      padding: 20px;
       text-align: center; }
     table.calendar .marked {
       background-color: #FF6679;
@@ -324,20 +331,23 @@ section {
   section ul {
     margin-bottom: 25px; }
     section ul li {
-      list-style-type: none; }
-      section ul li .muted {
-        display: inline-block;
-        margin-top: 7px;
-        margin-right: 10px;
-        font-size: 17px;
-        float: left; }
+      list-style-type: none;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0; }
+      section ul li:hover {
+        border-bottom: 1px solid #e0e0e0; }
+      section ul li .caption {
+        display: block;
+        width: 100%;
+        color: #c9c9c9;
+        font-size: 15px; }
+      section ul li .subtitle {
+        display: block;
+        font-size: 18px; }
       section ul li a {
         display: block;
-        padding: 5px 0;
         color: #313131;
-        border-bottom: 1px solid #e0e0e0; }
-        section ul li a:hover {
-          border-bottom: 1px solid #e0e0e0; }
+        border: none; }
   section img {
     width: 100%;
     margin: 50px 0; }
@@ -763,6 +773,26 @@ section {
       section.circles .circle:hover img {
         height: 105%;
         margin-left: -5%; }
+    section.circles.small {
+      padding-top: 20px;
+      padding-bottom: 0; }
+      section.circles.small .circle {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: none;
+        border-bottom: none; }
+        section.circles.small .circle:first-of-type {
+          border-left: none; }
+        section.circles.small .circle:last-of-type {
+          border-right: none; }
+        section.circles.small .circle .image {
+          width: 180px;
+          height: 180px;
+          border-radius: 180px; }
+        section.circles.small .circle p:first-of-type {
+          height: auto;
+          margin-top: 20px;
+          margin-bottom: 20px; }
   section:after {
     content: '';
     display: block;
