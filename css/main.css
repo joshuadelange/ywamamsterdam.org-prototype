@@ -336,9 +336,20 @@ section {
     padding: 50px; }
   section.center {
     text-align: center; }
+  section.world-map-as-bg {
+    background-image: url("http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xfbffff");
+    background-repeat: no-repeat;
+    background-size: 100%; }
   section h3 {
     display: block;
     clear: both; }
+  section .slogan {
+    font-family: "Expressway", sans-serif;
+    text-transform: uppercase;
+    width: 70%;
+    margin: auto;
+    font-size: 50px;
+    line-height: 70px; }
   section ul {
     margin-bottom: 25px; }
     section ul li {
