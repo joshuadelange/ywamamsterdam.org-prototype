@@ -193,6 +193,17 @@ h2 {
   content: '';
   display: block;
   clear: both; }
+.columns.thumbnails {
+  padding-top: 25px; }
+  .columns.thumbnails > a[class*="column-"] {
+    padding-bottom: 15px;
+    border-bottom-color: #313131; }
+    .columns.thumbnails > a[class*="column-"] .image {
+      border: 1px solid #c9c9c9;
+      height: 125px;
+      overflow: hidden; }
+    .columns.thumbnails > a[class*="column-"]:hover .image {
+      border-color: #b0b0b0; }
 .columns [class*="column-"] {
   float: left; }
   .columns [class*="column-"].column-2 {

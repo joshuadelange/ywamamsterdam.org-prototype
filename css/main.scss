@@ -287,6 +287,31 @@ h2 {
 		clear: both;
 	}
 
+	&.thumbnails {
+
+		padding-top: 25px;
+
+		& > a[class*="column-"] {
+
+			padding-bottom: 15px;
+			border-bottom-color: $bodyColor;
+
+			.image {
+				border: 1px solid $faded;
+				height: 125px;
+				overflow: hidden;
+			}
+
+			&:hover {
+				.image {
+					border-color: darken($faded, 10%) ;
+				}
+			}
+
+		}
+
+	}
+
 	[class*="column-"] {
 
 		float: left;
