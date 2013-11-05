@@ -443,6 +443,8 @@ section {
     display: block; }
   section.full-width {
     padding: 0; }
+    section.full-width > .columns {
+      padding: 0 50px; }
     section.full-width .map {
       width: 100%;
       height: 500px; }
@@ -755,13 +757,11 @@ section {
       margin-left: 5%;
       margin-bottom: 30px; }
     section.circles .circle {
-      width: 23%;
+      width: 27%;
       height: 100%;
       float: left;
       margin-top: -1px;
-      padding: 0 5%;
-      padding-bottom: 55px;
-      padding-top: 55px;
+      padding: 45px 3%;
       color: #313131;
       text-align: center;
       border: 1px solid #DDDDDD;
@@ -771,11 +771,11 @@ section {
       section.circles .circle:last-of-type {
         border-right: 1px solid #DDDDDD; }
       section.circles .circle .image {
-        width: 250px;
-        height: 250px;
+        width: 325px;
+        height: 325px;
         margin: 0 auto;
         margin-bottom: 30px;
-        border-radius: 250px;
+        border-radius: 325px;
         overflow: hidden; }
         section.circles .circle .image img {
           width: auto;
@@ -794,10 +794,12 @@ section {
         section.circles .circle p:first-of-type {
           height: 70px; }
       section.circles .circle .quarter {
-        font-style: italic;
         font-size: 18px;
-        color: #646464;
         margin-top: 10px; }
+      section.circles .circle .type {
+        font-style: italic;
+        font-size: 16px;
+        color: #979797; }
       section.circles .circle:hover h4 {
         border-bottom: 1px solid #313131; }
       section.circles .circle:hover .image img {
