@@ -466,7 +466,7 @@ a {
 }
 
 h3 {
-	font-family: "Expressway", Georgia;
+	font-family: "Expressway", sans-serif;
 
 	color: #333333;
 	font-weight: 100;
@@ -479,6 +479,12 @@ h3 {
 		margin-top: 10px;
 	}
 
+}
+
+h4 {
+	font-family: "Expressway", sans-serif;
+	text-transform: uppercase;
+	font-weight: 100;
 }
 
 .muted {
@@ -851,6 +857,8 @@ section {
 
 		.tile {
 
+			$rolloverSpeed: .75s;
+
 			cursor: pointer;
 
 			position: relative;
@@ -870,6 +878,8 @@ section {
 			-moz-box-shadow:    0 0 10px rgba(0, 0, 0, 0.75);
 			box-shadow:         0 0 10px rgba(0, 0, 0, 0.75);
 
+			overflow: hidden;
+
 			h3 {
 				font-family: "Expressway" ;
 
@@ -886,6 +896,8 @@ section {
 				text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 
 				padding-bottom: 2px;
+
+				-webkit-transition: all ease-out $rolloverSpeed;
 
 				// &:after {
 				// 	content: "";
@@ -926,12 +938,58 @@ section {
 				}
 			}
 
+			&.with-rollover:hover {
+
+				h3 {
+					bottom: 215px
+				}
+				
+				.image {
+					top: -200px;
+				}
+
+				.rollover {
+					top: 0;
+					opacity: 1;
+				}
+			}
+
+			.rollover {
+				position: absolute;
+					top: 200px;
+
+				width: 100%;
+				height: 200px;
+
+				background-color: #202020;
+
+				z-index: 1000;
+
+				-webkit-transition: all ease-out $rolloverSpeed;
+
+				h4, p {
+					margin: 0;
+					color: #979797;
+					text-align: center;
+				}
+
+				h4 {
+					color: #CECECE;
+					margin-top: 60px;
+				}
+			}
+
 			.image {
+
+				position: absolute;
+				top: 0;
 
 				width: auto;
 				height: 200px;
 
 				overflow: hidden;
+
+				-webkit-transition: all ease-out $rolloverSpeed;
 
 				img {
 					width: 100%;

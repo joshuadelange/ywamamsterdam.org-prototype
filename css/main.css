@@ -287,7 +287,7 @@ a {
     border-color: #b10016; }
 
 h3 {
-  font-family: "Expressway", Georgia;
+  font-family: "Expressway", sans-serif;
   color: #333333;
   font-weight: 100;
   text-transform: uppercase;
@@ -295,6 +295,11 @@ h3 {
   margin-top: 30px; }
   h3 + p {
     margin-top: 10px; }
+
+h4 {
+  font-family: "Expressway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100; }
 
 .muted {
   color: #c9c9c9; }
@@ -537,7 +542,8 @@ section {
       border-bottom: 0;
       -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.75); }
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+      overflow: hidden; }
       section.grid .tile h3 {
         font-family: "Expressway";
         position: absolute;
@@ -548,7 +554,8 @@ section {
         bottom: 15px;
         z-index: 100;
         text-shadow: 0px 0px 10px black;
-        padding-bottom: 2px; }
+        padding-bottom: 2px;
+        -webkit-transition: all ease-out 0.75s; }
       section.grid .tile.with-slogan h3 {
         bottom: 30px; }
       section.grid .tile.with-slogan p {
@@ -558,10 +565,35 @@ section {
         z-index: 100;
         color: #aeaeae;
         font-size: 17px; }
+      section.grid .tile.with-rollover:hover h3 {
+        bottom: 215px; }
+      section.grid .tile.with-rollover:hover .image {
+        top: -200px; }
+      section.grid .tile.with-rollover:hover .rollover {
+        top: 0;
+        opacity: 1; }
+      section.grid .tile .rollover {
+        position: absolute;
+        top: 200px;
+        width: 100%;
+        height: 200px;
+        background-color: #202020;
+        z-index: 1000;
+        -webkit-transition: all ease-out 0.75s; }
+        section.grid .tile .rollover h4, section.grid .tile .rollover p {
+          margin: 0;
+          color: #979797;
+          text-align: center; }
+        section.grid .tile .rollover h4 {
+          color: #CECECE;
+          margin-top: 60px; }
       section.grid .tile .image {
+        position: absolute;
+        top: 0;
         width: auto;
         height: 200px;
-        overflow: hidden; }
+        overflow: hidden;
+        -webkit-transition: all ease-out 0.75s; }
         section.grid .tile .image img {
           width: 100%;
           height: auto;
