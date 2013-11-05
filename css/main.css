@@ -108,6 +108,11 @@ header {
     clear: both;
     word-break: keep-all;
     text-shadow: 0px 0px 20px black; }
+  header .social {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000; }
 
 .video-wrapper {
   position: absolute;
@@ -889,6 +894,11 @@ footer {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: 90% 50px; }
+  footer .social {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin-top: 25px; }
   footer p {
     width: 40%;
     margin-bottom: 0;
