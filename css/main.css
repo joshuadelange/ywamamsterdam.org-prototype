@@ -1124,3 +1124,23 @@ footer {
     margin-top: 160px; }
   .frontpage .icon.couch .rboss {
     display: none; }
+
+#map {
+  width: 1500px;
+  height: 500px; }
+  #map .leaflet-control {
+    display: none; }
+  #map .leaflet-popup-close-button {
+    border-bottom: none; }
+  #map a {
+    color: #313131;
+    border-bottom-color: #313131; }
+  #map + .caption {
+    font-style: italic;
+    color: #c9c9c9; }
+    #map + .caption a {
+      color: #c9c9c9;
+      border-bottom: 1px solid #c9c9c9; }
+      #map + .caption a:hover {
+        color: #313131;
+        border-bottom: 1px solid #313131; }

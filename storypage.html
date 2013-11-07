@@ -6,6 +6,11 @@ slogan: Why uniting the prayer and mission movement will fullfill the great comm
 cover: church
 ---
 
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+
 <section>
 
 <!-- 
@@ -205,7 +210,15 @@ cover: church
 
 	<p>In The Netherlands there are at least 33 different prayer and worship initiatives that we know of that are all focused on serving the country through worship and intercession. “It's incredible to see what God is doing here, says Murray “as we gather with just a few people from this country, we can see how it's accelerating all over churches and small groups and ministries all over The Netherlands.”</p>
 
-	<p>MAAP</p>
+</section>
+
+<section class="full-width">
+	<div id="map"></div>
+
+	<p class="caption">Source: <a target="_blank" href="http://24-7gebed.nl/index.php/huizen-van-gebed/lijst-huizen-van-gebed">24-7Gebed.nl</a>
+</section>
+
+<section>
 
 	<p>Within the prayer and missions movements there has been a new focus put on the issues of social justice and human trafficking. In the Red Light District, next to The Tabernacle of the Nations is The Lighthouse, Youth with a Missions ministry which reaches out to victims of human trafficking in Amsterdam.</p>
 
@@ -238,3 +251,4 @@ cover: church
 
 </section>
 
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>

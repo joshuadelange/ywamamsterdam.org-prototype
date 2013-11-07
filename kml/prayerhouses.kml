@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>huizenvangebed</name>
+	<open>1</open>
+	<StyleMap>
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#style</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#style0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="geocode4">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_kaars015">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01112</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0103</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars01170">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars010">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0120</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars017</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="failed">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#failed0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="geocode5">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_kaars0119">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0117</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0120</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars010">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+		<BalloonStyle>
+			<text>$[description]</text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>0</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_kaars0101">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars0120">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars01112">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0114">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01141</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0118</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars01202">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="geocode0">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_kaars013">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="failed0">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars0116">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="failed1">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars010">
+		<IconStyle>
+			<scale>0.6</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<text>$[description]</text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>0</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_kaars012">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars01102">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars012">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_kaars01">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="geocode3">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_kaars016">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01170</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0117</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0118">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars016">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0112">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars012</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars011</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars0122">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0152">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0101</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0112</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars0117">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars011">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>1.21</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="msn_kaars0144">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars015</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0116</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0120">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0113">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01202</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars01151</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars015">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars0124">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="geocode1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#geocode0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#geocode4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0117">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0123">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0122</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars018</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="geocode7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#geocode6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#geocode5</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_kaars0121">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars010</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars010</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars0110">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="geocode6">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_kaars013">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0116</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars011">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="geocode">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="geocode2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#geocode3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#geocode</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars01151">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars0112">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars011">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars011</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_kaars01141">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0118">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01102</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0124</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0110">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="mfailed">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#failed10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars012</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_kaars0122">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0114</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars013</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0103">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars0116">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars0115</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars018">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars01">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="failed10">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_kaars017">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_kaars0110">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_kaars0110</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_kaars016</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_kaars0115">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sn_kaars0114">
+		<IconStyle>
+			<Icon>
+				<href>http://24-7gebed.nl/images/kaart/kaars01.gif</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Placemark id="21">
+		<name>Gebedshuis Dominioncentre</name>
+		<address>Ellermanstraat 30, 1099 BZ Amsterdam, Nederland</address>
+		<description><![CDATA[Ellermanstraat 30, 1099 BZ Amsterdam, Nederland
+<a href="http://www.embassyamsterdam.nl/contact/contact-a-route">http://www.embassyamsterdam.nl/contact/contact-a-route</a>]]></description>
+		<styleUrl>#geocode1</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>4.931421,52.326743,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					4.928903,52.324225,0 4.928903,52.329261,0 4.933939000000001,52.329261,0 4.933939000000001,52.324225,0 4.928903,52.324225,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+		<AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>NL</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Noord-Holland</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Amsterdam</SubAdministrativeAreaName><Locality><LocalityName>Amsterdam</LocalityName><Thoroughfare><ThoroughfareName>Ellermanstraat 30</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>1099 BZ</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="22">
+		<name>Gebedsketen Nijmegen</name>
+		<address>Nijmegen, Nederland</address>
+		<description><![CDATA[<br>Huis van Gebed Nijmegen</br>
+<p>gebedsketen voor de stad Nijmegen</p>
+
+<a href="http://www.24-7site.com/index.php?&amp;language=NL&amp;page_id=5&amp;location=Nijmegen%20" target="_blank">Website</a>]]></description>
+		<styleUrl>#geocode2</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>5.854622,51.84286700000001,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					5.777313999999999,51.8011342,0 5.777313999999999,51.88459979999999,0 5.93193,51.88459979999999,0 5.93193,51.8011342,0 5.777313999999999,51.8011342,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>NL</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Gelderland</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Nijmegen</SubAdministrativeAreaName><Locality><LocalityName>Nijmegen</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Gebedshuis Amersfoort</name>
+		<address>Amersfoort, Nederland</address>
+		<description>info:
+arjan.krijtenburg@gmail.com</description>
+		<styleUrl>#geocode7</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>5.387827,52.156111,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					5.3231202,52.1136226,0 5.3231202,52.19859940000002,0 5.452533799999999,52.19859940000002,0 5.452533799999999,52.1136226,0 5.3231202,52.1136226,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>NL</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Utrecht</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Amersfoort</SubAdministrativeAreaName><Locality><LocalityName>Amersfoort</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark>
+		<name>Gebedshuis Elburg</name>
+		<open>1</open>
+		<address>Bloemstraat 18, Elburg</address>
+		<description><![CDATA[<BR>Gebouw "Rehoboth" <BR>
+Bloemstraat 18, Elburg <BR><a href="http://www.huisvangebed-elburg.nl/content/2011/11/rooster-van-gebedsactiviteiten">http://www.huisvangebed-elburg.nl/content/2011/11/rooster-van-gebedsactiviteiten
+</a>]]></description>
+		<LookAt>
+			<longitude>5.834491</longitude>
+			<latitude>52.447263</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars011</styleUrl>
+		<Point>
+			<coordinates>5.834491,52.44726300000001,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Drachten</name>
+		<open>1</open>
+		<address>Oosterstraat 35, Drachten</address>
+		<description><![CDATA[<BR>Oosterstraat 35<BR>
+Drachten<BR>
+</br> Openingtijden, zie</br>
+http://www.huisvangebeddrachten.nl/index.php/gebedsroosterdrachten]]></description>
+		<LookAt>
+			<longitude>6.101342</longitude>
+			<latitude>53.107803</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#mfailed</styleUrl>
+		<Point>
+			<coordinates>6.101342,53.107803,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Gebedswinkel</name>
+		<open>1</open>
+		<address>Rijnstraat 77, 3441 Woerden</address>
+		<description><![CDATA[Rijnstraat 77, <br/>
+3441 Woerden <br/>]]></description>
+		<LookAt>
+			<longitude>4.886141</longitude>
+			<latitude>52.085646</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0119</styleUrl>
+		<Point>
+			<coordinates>4.886141,52.085646,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Franeker</name>
+		<open>1</open>
+		<address>Professor Holwardastraat 21, 8801 Franeker</address>
+		<description><![CDATA[</br>
+Professor Holwardastraat 21<BR>
+8801 Franeker<BR>
+</br> Open: Elke dinsdag van 13.00 tot 17.00 uur.</br>
+e-mail: cdtamminga@ziggo.nl]]></description>
+		<LookAt>
+			<longitude>5.545195</longitude>
+			<latitude>53.190646</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0118</styleUrl>
+		<Point>
+			<coordinates>5.545195,53.190646,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Ede</name>
+		<open>1</open>
+		<address>Ede</address>
+		<description>Website: http://www.24-7ede.nl/</description>
+		<LookAt>
+			<longitude>5.666667</longitude>
+			<latitude>52.043611</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>14324.363281</range>
+		</LookAt>
+		<styleUrl>#msn_kaars015</styleUrl>
+		<Point>
+			<coordinates>5.666667,52.043611,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Venlo</name>
+		<open>1</open>
+		<address>Kaldenkerkerweg 29, 5913 Venlo</address>
+		<description><![CDATA[<br/>Kaldenkerkerweg 29<br/>
+5913 AB Venlo]]></description>
+		<LookAt>
+			<longitude>6.174891</longitude>
+			<latitude>51.363364</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0123</styleUrl>
+		<Point>
+			<coordinates>6.174891000000001,51.363364,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Nunspeet</name>
+		<open>1</open>
+		<address>Secretaris Mulderweg 18, 8071 Nunspeet</address>
+		<description><![CDATA[<br/>Secr. Mulderweg 18<br/>
+8071 VS Nunspeet <br/>
+http://www.huisvangebed.nl/]]></description>
+		<LookAt>
+			<longitude>5.784418</longitude>
+			<latitude>52.381347</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars016</styleUrl>
+		<Point>
+			<coordinates>5.784418,52.381347,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Katwijk</name>
+		<open>1</open>
+		<address>Prins Hendrikkade 11A, 2225 Katwijk</address>
+		<description><![CDATA[<br>Prins Hendrikkade 11a<br/>
+2225 TZ Katwijk <br>
+http://www.gebedkatwijk.nl/gebedshuiskatwijk.html]]></description>
+		<LookAt>
+			<longitude>4.406803</longitude>
+			<latitude>52.205398</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars01</styleUrl>
+		<Point>
+			<coordinates>4.406803,52.20539800000001,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Heerde</name>
+		<open>1</open>
+		<address>Zwarteweg 10, 8181 Heerde</address>
+		<description><![CDATA[<br>Zwarteweg 10<br/>
+8181 PD Heerde]]></description>
+		<LookAt>
+			<longitude>6.014201</longitude>
+			<latitude>52.375113</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0113</styleUrl>
+		<Point>
+			<coordinates>6.014201,52.375113,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Daniel</name>
+		<open>1</open>
+		<address>Zilverstraat 23, 2544 Den Haag</address>
+		<description><![CDATA[<br/>Zilverstraat 23<br/>
+2544 EJ Den Haag <br/>]]></description>
+		<LookAt>
+			<longitude>4.259158</longitude>
+			<latitude>52.050894</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0122</styleUrl>
+		<Point>
+			<coordinates>4.259158,52.050894,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed &apos;Domino&apos;</name>
+		<address>Willem Barentszstraat 9, 3572 Utrecht</address>
+		<Snippet maxLines="2"><![CDATA[<br/>]]></Snippet>
+		<description><![CDATA[<br/>Willem Barentzstraat 9<br/>
+3572 PA Utrecht<br/>]]></description>
+		<LookAt>
+			<longitude>5.141204</longitude>
+			<latitude>52.096134</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0114</styleUrl>
+		<Point>
+			<coordinates>5.141204,52.096134,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Zandvoort</name>
+		<description><![CDATA[Huis van gebed Zandvoort
+<br/>J.G. Metzgerstraat 124 <br/>
+2041 HS  Zandvoort<br/>
+http://www.gebedzandvoort.nl/]]></description>
+		<styleUrl>#msn_kaars0121</styleUrl>
+		<Point>
+			<coordinates>4.528255,52.37420833333333,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed Elim</name>
+		<open>1</open>
+		<address>Tulpstraat 58, 3071 Rotterdam</address>
+		<description><![CDATA[<br/>Huis van gebed Elim<br/>
+Tulpstraat 58  3071 Rotterdam
+<br/>
+http://www.elimrotterdam.nl/]]></description>
+		<LookAt>
+			<longitude>4.496071</longitude>
+			<latitude>51.913322</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0152</styleUrl>
+		<Point>
+			<coordinates>4.496071,51.913322,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>De Tent - Houten</name>
+		<address>Boekweit-Oord 48, 3991 Houten</address>
+		<Snippet maxLines="2"><![CDATA[<br/>]]></Snippet>
+		<description><![CDATA[<br/>Boekweitoord 48<br/>
+3991 XW Houten
+<br/>
+http://www.houten.24-7gebed.nl/]]></description>
+		<LookAt>
+			<longitude>5.15797</longitude>
+			<latitude>52.031014</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars010</styleUrl>
+		<Point>
+			<coordinates>5.15797,52.031014,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Ermelo</name>
+		<address>Ermelo</address>
+		<Snippet maxLines="2"><![CDATA[<br/>]]></Snippet>
+		<description><![CDATA[<br/>Stationstraat 20<br/>
+3881  Ermelo <br/>
+Voor meer info:
+http://www.ermelo.24-7gebed.nl/]]></description>
+		<LookAt>
+			<longitude>5.629619</longitude>
+			<latitude>52.298666</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>14242.519531</range>
+		</LookAt>
+		<styleUrl>#msn_kaars013</styleUrl>
+		<Point>
+			<coordinates>5.629619,52.298666,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van gebed &apos;Samen bidden&apos;</name>
+		<description><![CDATA[Groningerstraat 36 
+8921 TR Leeuwarden
+<br/>
+Wil je meebidden? Kijk dan hier voor het rooster. 
+<br/>
+http://www.24-7site.com/index.php?&language=NL&page_id=5&location=leeuwarden]]></description>
+		<LookAt>
+			<longitude>5.804614000048314</longitude>
+			<latitude>53.208162000042</latitude>
+			<altitude>0</altitude>
+			<heading>-7.882666222870335e-014</heading>
+			<tilt>0</tilt>
+			<range>999.9652838297815</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0144</styleUrl>
+		<Point>
+			<coordinates>5.804614000048314,53.20816200004201,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Twente</name>
+		<description><![CDATA[Kappelhofsweg 14A
+<br/>
+Delden<br/>
+Wil je meebidden? Kijk dan hier voor informatie en het rooster.
+
+http://www.huisvangebedtwente.nl]]></description>
+		<LookAt>
+			<longitude>6.66066248366222</longitude>
+			<latitude>52.26051137498496</latitude>
+			<altitude>0</altitude>
+			<heading>-0.003670507548080082</heading>
+			<tilt>0</tilt>
+			<range>1003.250294584922</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_kaars0110</styleUrl>
+		<Point>
+			<coordinates>6.664701202512005,52.26088732273477,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>The Tabernacle of the Nations</name>
+		<address>Oudezijds Voorburgwal 65, 1012 Amsterdam</address>
+		<description><![CDATA[Gebedshuis "The Tabernacle of the Nations"
+<br>
+Amsterdam
+<br>
+Voor meer informatie kun je surfen naar:
+http://www.tabernacle.nl/]]></description>
+		<LookAt>
+			<longitude>4.898893</longitude>
+			<latitude>52.374063</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#msn_kaars0112</styleUrl>
+		<Point>
+			<coordinates>4.898893,52.37406300000001,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Huis van Gebed Oosterhout</name>
+		<address>Hoevestraat 12, 4849 Oosterhout</address>
+		<description><![CDATA[</br>
+Hoevestraat 12/71 <BR>
+4903 RR Oosterhout <BR>
+</br> Openingtijden, zie</br>
+http://www.huisvangebed-desjofar.nl]]></description>
+		<LookAt>
+			<longitude>4.860892</longitude>
+			<latitude>51.606912</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>1000</range>
+		</LookAt>
+		<styleUrl>#failed</styleUrl>
+		<Point>
+			<coordinates>4.860892,51.606912,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

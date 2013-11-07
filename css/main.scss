@@ -1931,3 +1931,38 @@ footer {
 	}
 
 }
+
+#map {
+	width: 1500px;
+	height: 500px;
+
+	.leaflet-control {
+		display: none;
+	}
+
+	.leaflet-popup-close-button {
+		border-bottom: none;
+	}
+
+	a {
+		color: $bodyColor;
+		border-bottom-color: $bodyColor;
+	}
+
+	& + .caption {
+		font-style: italic;
+		color: $faded;
+
+		a {
+			color: $faded;
+			border-bottom: 1px solid $faded;
+
+			&:hover {
+				color: $bodyColor;
+				border-bottom: 1px solid $bodyColor;
+			}
+		}
+	}
+
+
+}
