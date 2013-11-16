@@ -38,13 +38,74 @@ $(document).ready(function(){
 	if(gutenbergEnabled) {
 
 		var $wrap = $('#gutenbergstats'),
-			startFixed = $wrap.offset().top,
+			startFixed = $wrap.offset().top ;
 
-			numOfColumns = 9,
-			lists = [],
-			stats = {} ;
+		//General graph dimensions stuff!
+		var margin = {top: 50, right: 50, bottom: 50, left: 50},
+			width = window.innerWidth - margin.left - margin.right,
+			height = 700 - margin.top - margin.bottom;
+
+		//Adding the X scale
+		var x = d3.scale.linear()
+			.range([0, width]);
+
+		//Adding a Y scale for translations
+		var yTranslations = d3.scale.linear()
+			.range([height, 0]);
+
+		//Adding a Y scale for christians
+		var yChristians = d3.scale.linear()
+			.range([height, 0]);
+
+		//x axis
+		var xAxis = d3.svg.axis()
+			.scale(x)
+			.orient('bottom');
+
+		//bible translations y axis
+		var yAxisTranslations = d3.svg.axis()
+			.scale(yTranslations)
+			.orient('left');
+
+		//bible translations y axis
+		var yAxisChristians = d3.svg.axis()
+			.scale(yChristians)
+			.orient('right');
+
+		var lineTranslations = d3.svg.line()
+			.interpolate("basis")
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return yTranslations(d.translations); });
+
+		var lineChristians = d3.svg.line()
+			.interpolate("basis")
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return yChristians(d.christians); });
+
+		var svg = d3.select('#gutenbergcanvas').append('svg')
+			.attr('width', width + margin.left + margin.right)
+			.attr('height', height + margin.top + margin.bottom)
+			.append('g')
+			.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')') ;
+
+		var marker = svg.append('svg:line')
+						.attr('y1', 0)
+						.attr('y2', height)
+						.attr('x1', 0)
+						.attr('x2', 0)
+						.attr('class', 'marker') ;
+
+		var markerLabel = svg.append('text')
+			.attr('class', 'markerLabel')
+			.attr('y', 20)
+			.attr('x', 0)
+			.text('0') ;
 
 		$.getJSON('https://spreadsheets.google.com/feeds/cells/0ApT5f0KS7hjVdEh5Z0dkVXlJWFFPYWl3b2lZYl83OVE/od6/public/basic?alt=json-in-script&callback=?', function(data){
+
+			var numOfColumns = 9,
+				lists = [],
+				stats = {} ;
 
 			//first transform this data into an usable object
 			$.each(data.feed.entry, function(index, value){
@@ -78,58 +139,10 @@ $(document).ready(function(){
 
 			console.log('data', data) ;
 
-			//General graph dimensions stuff!
-			var margin = {top: 50, right: 50, bottom: 50, left: 50},
-				width = window.innerWidth - margin.left - margin.right,
-				height = 600 - margin.top - margin.bottom;
-
-			//Adding the X scale
-			var x = d3.scale.linear()
-				.range([0, width]);
-
-			//Adding a Y scale for translations
-			var yTranslations = d3.scale.linear()
-				.range([height, 0]);
-
-			//Adding a Y scale for christians
-			var yChristians = d3.scale.linear()
-				.range([height, 0]);
-
-			//x axis
-			var xAxis = d3.svg.axis()
-				.scale(x)
-				.orient('bottom');
-
-			//bible translations y axis
-			var yAxisTranslations = d3.svg.axis()
-				.scale(yTranslations)
-				.orient('left');
-
-			//bible translations y axis
-			var yAxisChristians = d3.svg.axis()
-				.scale(yChristians)
-				.orient('right');
-
-			var lineTranslations = d3.svg.line()
-				.interpolate("basis")
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return yTranslations(d.translations); });
-
-			var lineChristians = d3.svg.line()
-				.interpolate("basis")
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return yChristians(d.christians); });
-
-			var svg = d3.select('#gutenbergcanvas').append('svg')
-				.attr('width', width + margin.left + margin.right)
-				.attr('height', height + margin.top + margin.bottom)
-				.append('g')
-				.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
 			x.domain(d3.extent(data, function(d) { return d.year; }));
 
-			yTranslations.domain(d3.extent(data, function(d) { console.log('translations', d.translations); return d.translations; }));
-			yChristians.domain(d3.extent(data, function(d) { console.log('christians', d.christians) ; return d.christians; }));
+			yTranslations.domain(d3.extent(data, function(d) { return d.translations; }));
+			yChristians.domain(d3.extent(data, function(d) { return d.christians; }));
 			// yChristians.domain([0, 100]);
 
 			svg.append('g')
@@ -180,23 +193,53 @@ $(document).ready(function(){
 
 				// console.log(startFixed, stopFixed, scrollPosition) ;
 
+				var $nextSection = $wrap.next('section'),
+					nextSectionHeight = $nextSection.height(),
+					markerStart = 700 ;
+
 				if(scrollPosition > startFixed) {
+
 					$wrap.css({
 						'position': 'fixed',
 						'top': 0,
 						'left': 0,
 						'bottom': 0
 					}) ;
-					$wrap.next('section').css({
+					$nextSection.css({
 						'marginTop': 0
 					}) ;
+
 				}
 				else {
+
 					$wrap.attr('style', '') ;
-					$wrap.next('section').css({
+					$nextSection.css({
 						'marginTop': -950
 					}) ;
+
 				}
+
+				console.log('width', width, 'nextSectionHeight', nextSectionHeight, 'scrollPosition', scrollPosition) ;
+
+				var newX = markerStart + (scrollPosition - startFixed) ;
+
+				console.log('newX', newX) ;
+
+				marker.attr('x1', newX).attr('x2', newX) ;
+				markerLabel.attr('x', newX + 10).text(Math.round(x.invert(newX))) ;
+
+				// console.log('invert', x.invert(newX)));
+
+				svg.selectAll('image').data([0]).enter()
+					.append('svg:image')
+					.attr('xlink:href', '/photos/gutenberg/person.svg')
+					.attr('class', 'person')
+					.attr('x', '700')
+					.attr('y', '0')
+					.attr('width', '30')
+					.attr('height', '30') ;
+
+
 
 			}
 			/*

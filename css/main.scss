@@ -2096,11 +2096,16 @@ footer {
 		background-color: transparent;
 
 		.quote {
-			margin-top: 75px;
+			margin-top: 100px;
+			margin-bottom: 0;
 
 			& + .source {
-				margin-bottom: 125px;
+				margin-bottom: 175px;
 			}
+		}
+
+		p {
+			margin-bottom: 50px;
 		}
 	}
 
@@ -2115,6 +2120,20 @@ footer {
 			shape-rendering: crispEdges;
 		}
 
+		.marker {
+			stroke: #C70505;
+			stroke-width: 2px;
+		}
+
+		text.markerLabel {
+			fill: #C70505;
+			font-size: 20px;
+		}
+
+		.person {
+			fill: green;
+		}
+
 		text.translations {
 			fill: steelblue;
 			font-size: 15px;
@@ -2127,13 +2146,13 @@ footer {
 		}
 
 		text.christians {
-			fill: #C70505;
+			fill: green;
 			font-size: 15px;
 		}
 
 		path.christians {
 			fill: none;
-			stroke: #C70505;
+			stroke: green;
 			stroke-width: 2px;
 		}
 

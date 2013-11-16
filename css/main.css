@@ -1233,9 +1233,12 @@ footer {
     margin-top: -950px;
     background-color: transparent; }
     #gutenbergstats + section .quote {
-      margin-top: 75px; }
+      margin-top: 100px;
+      margin-bottom: 0; }
       #gutenbergstats + section .quote + .source {
-        margin-bottom: 125px; }
+        margin-bottom: 175px; }
+    #gutenbergstats + section p {
+      margin-bottom: 50px; }
   #gutenbergstats #gutenbergcanvas {
     font: 10px sans-serif; }
     #gutenbergstats #gutenbergcanvas .axis path,
@@ -1243,6 +1246,14 @@ footer {
       fill: none;
       stroke: #000;
       shape-rendering: crispEdges; }
+    #gutenbergstats #gutenbergcanvas .marker {
+      stroke: #C70505;
+      stroke-width: 2px; }
+    #gutenbergstats #gutenbergcanvas text.markerLabel {
+      fill: #C70505;
+      font-size: 20px; }
+    #gutenbergstats #gutenbergcanvas .person {
+      fill: green; }
     #gutenbergstats #gutenbergcanvas text.translations {
       fill: steelblue;
       font-size: 15px; }
@@ -1251,9 +1262,9 @@ footer {
       stroke: steelblue;
       stroke-width: 2px; }
     #gutenbergstats #gutenbergcanvas text.christians {
-      fill: #C70505;
+      fill: green;
       font-size: 15px; }
     #gutenbergstats #gutenbergcanvas path.christians {
       fill: none;
-      stroke: #C70505;
+      stroke: green;
       stroke-width: 2px; }
