@@ -63,38 +63,62 @@ $(document).ready(function(){
 				stats[value.shift().replace(/ /g, '_').toLowerCase()] = value ;
 			}) ;
 
+			var numeric_percentage_of_christians = stats.percentage_of_christians.map(function(p){
+				return parseFloat(p.replace('%', ''), 0) ;
+			}) ;
+
 			data = [];
 			$.each(stats.year, function(index, value){
 				data[index] = {
 					translations: parseInt(stats.bible_translations[index], 10),
+					christians: numeric_percentage_of_christians[index],
 					year: parseInt(value, 10)
 				} ;
 			}) ;
 
-			console.log(data) ;
+			console.log('data', data) ;
 
+			//General graph dimensions stuff!
 			var margin = {top: 50, right: 50, bottom: 50, left: 50},
 				width = window.innerWidth - margin.left - margin.right,
 				height = 600 - margin.top - margin.bottom;
 
+			//Adding the X scale
 			var x = d3.scale.linear()
 				.range([0, width]);
 
-			var y = d3.scale.linear()
+			//Adding a Y scale for translations
+			var yTranslations = d3.scale.linear()
 				.range([height, 0]);
 
+			//Adding a Y scale for christians
+			var yChristians = d3.scale.linear()
+				.range([height, 0]);
+
+			//x axis
 			var xAxis = d3.svg.axis()
 				.scale(x)
 				.orient('bottom');
 
-			var yAxis = d3.svg.axis()
-				.scale(y)
+			//bible translations y axis
+			var yAxisTranslations = d3.svg.axis()
+				.scale(yTranslations)
 				.orient('left');
 
-			var line = d3.svg.line()
+			//bible translations y axis
+			var yAxisChristians = d3.svg.axis()
+				.scale(yChristians)
+				.orient('right');
+
+			var lineTranslations = d3.svg.line()
 				.interpolate("basis")
 				.x(function(d) { return x(d.year); })
-				.y(function(d) { return y(d.translations); });
+				.y(function(d) { return yTranslations(d.translations); });
+
+			var lineChristians = d3.svg.line()
+				.interpolate("basis")
+				.x(function(d) { return x(d.year); })
+				.y(function(d) { return yChristians(d.christians); });
 
 			var svg = d3.select('#gutenbergcanvas').append('svg')
 				.attr('width', width + margin.left + margin.right)
@@ -103,16 +127,19 @@ $(document).ready(function(){
 				.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 			x.domain(d3.extent(data, function(d) { return d.year; }));
-			y.domain(d3.extent(data, function(d) { return d.translations; }));
+
+			yTranslations.domain(d3.extent(data, function(d) { console.log('translations', d.translations); return d.translations; }));
+			yChristians.domain(d3.extent(data, function(d) { console.log('christians', d.christians) ; return d.christians; }));
+			// yChristians.domain([0, 100]);
 
 			svg.append('g')
-				.attr('class', 'x axis')
+				.attr('class', 'x axis translations')
 				.attr('transform', 'translate(0,' + height + ')')
 				.call(xAxis);
 
 			svg.append('g')
 				.attr('class', 'y axis')
-				.call(yAxis)
+				.call(yAxisTranslations)
 				.append('text')
 				.attr('transform', 'rotate(-90)')
 				.attr('y', 6)
@@ -121,10 +148,27 @@ $(document).ready(function(){
 				.style('text-anchor', 'end')
 				.text('Number of bible translations');
 
+			svg.append('g')
+				.attr('class', 'y axis')
+				.attr('transform', 'translate(' + width + ',0)')
+				.call(yAxisChristians)
+				.append('text')
+				.attr('transform', 'rotate(-90)')
+				.attr('y', -15)
+				.attr('dy', '.71em')
+				.attr('class', 'christians')
+				.style('text-anchor', 'end')
+				.text('Percentage of christians');
+
 			svg.append('path')
 				.datum(data)
 				.attr('class', 'line translations')
-				.attr('d', line);
+				.attr('d', lineTranslations);
+
+			svg.append('path')
+				.datum(data)
+				.attr('class', 'line christians')
+				.attr('d', lineChristians);
 
 		});
 

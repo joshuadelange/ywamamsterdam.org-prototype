@@ -1250,3 +1250,10 @@ footer {
       fill: none;
       stroke: steelblue;
       stroke-width: 2px; }
+    #gutenbergstats #gutenbergcanvas text.christians {
+      fill: #C70505;
+      font-size: 15px; }
+    #gutenbergstats #gutenbergcanvas path.christians {
+      fill: none;
+      stroke: #C70505;
+      stroke-width: 2px; }
