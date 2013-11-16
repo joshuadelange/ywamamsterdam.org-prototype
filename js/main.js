@@ -57,6 +57,11 @@ $(document).ready(function(){
 		var yChristians = d3.scale.linear()
 			.range([height, 0]);
 
+		var yTranslationsAnimated = d3.scale.linear()
+			.range([height, 0]);
+		var yChristiansAnimated = d3.scale.linear()
+			.range([height, 0]);
+
 		//x axis
 		var xAxis = d3.svg.axis()
 			.scale(x)
@@ -82,6 +87,16 @@ $(document).ready(function(){
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return yChristians(d.christians); });
 
+		var lineTranslationsAnimated = d3.svg.line()
+			.interpolate("basis")
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return yTranslations(d.translations); });
+
+		var lineChristiansAnimated = d3.svg.line()
+			.interpolate("basis")
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return yChristians(d.christians); });
+
 		var svg = d3.select('#gutenbergcanvas').append('svg')
 			.attr('width', width + margin.left + margin.right)
 			.attr('height', height + margin.top + margin.bottom)
@@ -101,14 +116,19 @@ $(document).ready(function(){
 			.attr('x', 0)
 			.text('0') ;
 
-		$.getJSON('https://spreadsheets.google.com/feeds/cells/0ApT5f0KS7hjVdEh5Z0dkVXlJWFFPYWl3b2lZYl83OVE/od6/public/basic?alt=json-in-script&callback=?', function(data){
+		data = [] ;
+		var animatedData = [] ;
+
+		$.getJSON('https://spreadsheets.google.com/feeds/cells/0ApT5f0KS7hjVdEh5Z0dkVXlJWFFPYWl3b2lZYl83OVE/od6/public/basic?alt=json-in-script&callback=?', function(r){
+
+			console.log(data) ;
 
 			var numOfColumns = 9,
 				lists = [],
 				stats = {} ;
 
 			//first transform this data into an usable object
-			$.each(data.feed.entry, function(index, value){
+			$.each(r.feed.entry, function(index, value){
 
 				var columnIndex = index % numOfColumns ;
 
@@ -128,14 +148,17 @@ $(document).ready(function(){
 				return parseFloat(p.replace('%', ''), 0) ;
 			}) ;
 
-			data = [];
 			$.each(stats.year, function(index, value){
+
 				data[index] = {
 					translations: parseInt(stats.bible_translations[index], 10),
 					christians: numeric_percentage_of_christians[index],
 					year: parseInt(value, 10)
 				} ;
+
 			}) ;
+
+			animatedData.push(data[0]) ;
 
 			console.log('data', data) ;
 
@@ -143,6 +166,9 @@ $(document).ready(function(){
 
 			yTranslations.domain(d3.extent(data, function(d) { return d.translations; }));
 			yChristians.domain(d3.extent(data, function(d) { return d.christians; }));
+
+			yTranslationsAnimated.domain(d3.extent(data, function(d) { return d.translations; }));
+			yChristiansAnimated.domain(d3.extent(data, function(d) { return d.christians; }));
 			// yChristians.domain([0, 100]);
 
 			svg.append('g')
@@ -175,21 +201,27 @@ $(document).ready(function(){
 
 			svg.append('path')
 				.datum(data)
-				.attr('class', 'line translations')
+				.attr('class', 'line faded')
 				.attr('d', lineTranslations);
 
 			svg.append('path')
 				.datum(data)
-				.attr('class', 'line christians')
+				.attr('class', 'line faded')
 				.attr('d', lineChristians);
 
-		});
+			var translatonsPathAnimated = svg.append('path')
+				.datum(animatedData)
+				.attr('class', 'line translations')
+				.attr('d', lineTranslationsAnimated);
 
-		$(window).scroll(function(){
+			var christiansPathAnimated = svg.append('path')
+				.datum(animatedData)
+				.attr('class', 'line christians')
+				.attr('d', lineChristiansAnimated);
 
-			var scrollPosition = $(document).scrollTop() ;
+			$(window).scroll(function(){
 
-			if(gutenbergEnabled) {
+				var scrollPosition = $(document).scrollTop() ;
 
 				// console.log(startFixed, stopFixed, scrollPosition) ;
 
@@ -219,6 +251,8 @@ $(document).ready(function(){
 
 				}
 
+				console.log('data from cl', data) ;
+
 				console.log('width', width, 'nextSectionHeight', nextSectionHeight, 'scrollPosition', scrollPosition) ;
 
 				var newX = markerStart + (scrollPosition - startFixed) ;
@@ -228,20 +262,71 @@ $(document).ready(function(){
 				marker.attr('x1', newX).attr('x2', newX) ;
 				markerLabel.attr('x', newX + 10).text(Math.round(x.invert(newX))) ;
 
+				var progressInGraph = newX / width * 100 ;
+
+				console.log('progressInGraph', progressInGraph) ;
+
+				console.log('data length', data.length) ;
+
+				var roughRelatedIndex = progressInGraph * data.length / 100 ;
+
+				console.log('roughRelatedIndex', roughRelatedIndex) ;
+				
+				var relatedIndex = Math.floor(roughRelatedIndex) ;
+
+				console.log('relatedIndex', relatedIndex) ;
+
+				var relatedData = data[relatedIndex] ;
+
+				// animatedData = data.splice(0) ;
+
+				animatedData = [] ;
+
+				$.each(data, function(index, value){
+					animatedData[index] = value ;
+				}) ;
+
+				animatedData = animatedData.splice(0, relatedIndex) ;
+
+				console.log(relatedData) ;
+
+				console.log(animatedData) ;
+
+				christiansPathAnimated.datum(animatedData) // set the new data
+					.attr('transform', 'translate(' + x(1) + ')') // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value
+					.attr('d', lineChristiansAnimated) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
+					.attr('test', 'updated')
+					.transition() // start a transition to bring the new value into view
+					.ease('linear')
+					.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below
+					.attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
+
+				translatonsPathAnimated.datum(animatedData) // set the new data
+					.attr('transform', 'translate(' + x(1) + ')') // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value
+					.attr('d', lineTranslationsAnimated) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
+					.attr('test', 'updated')
+					.transition() // start a transition to bring the new value into view
+					.ease('linear')
+					.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below
+					.attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
+
 				// console.log('invert', x.invert(newX)));
 
-				svg.selectAll('image').data([0]).enter()
-					.append('svg:image')
-					.attr('xlink:href', '/photos/gutenberg/person.svg')
-					.attr('class', 'person')
-					.attr('x', '700')
-					.attr('y', '0')
-					.attr('width', '30')
-					.attr('height', '30') ;
+				// svg.selectAll('image').data([0]).enter()
+				// 	.append('svg:image')
+				// 	.attr('xlink:href', '/photos/gutenberg/person.svg')
+				// 	.attr('class', 'person')
+				// 	.attr('x', '700')
+				// 	.attr('y', '0')
+				// 	.attr('width', '30')
+				// 	.attr('height', '30') ;
+			});
+
+		});
+
+		$(window).scroll(function(){
 
 
-
-			}
 			/*
 			var headerHeight = 720,
 				scrollTop = $(document).scrollTop(),

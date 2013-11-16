@@ -1261,6 +1261,10 @@ footer {
       fill: none;
       stroke: steelblue;
       stroke-width: 2px; }
+    #gutenbergstats #gutenbergcanvas path.faded {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #a6a6a6; }
     #gutenbergstats #gutenbergcanvas text.christians {
       fill: green;
       font-size: 15px; }

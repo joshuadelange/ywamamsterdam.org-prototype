@@ -2145,6 +2145,12 @@ footer {
 			stroke-width: 2px;
 		}
 
+		path.faded {
+			fill: none;
+			stroke-width: 1px;
+			stroke: #a6a6a6;
+		}
+
 		text.christians {
 			fill: green;
 			font-size: 15px;
