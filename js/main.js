@@ -78,22 +78,22 @@ $(document).ready(function(){
 			.orient('right');
 
 		var lineTranslations = d3.svg.line()
-			.interpolate("basis")
+			.interpolate('basis')
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return yTranslations(d.translations); });
 
 		var lineChristians = d3.svg.line()
-			.interpolate("basis")
+			.interpolate('basis')
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return yChristians(d.christians); });
 
 		var lineTranslationsAnimated = d3.svg.line()
-			.interpolate("basis")
+			.interpolate('basis')
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return yTranslations(d.translations); });
 
 		var lineChristiansAnimated = d3.svg.line()
-			.interpolate("basis")
+			.interpolate('basis')
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return yChristians(d.christians); });
 
@@ -108,12 +108,14 @@ $(document).ready(function(){
 						.attr('y2', height)
 						.attr('x1', 0)
 						.attr('x2', 0)
+						.attr('stroke-opacity', 0)
 						.attr('class', 'marker') ;
 
 		var markerLabel = svg.append('text')
 			.attr('class', 'markerLabel')
 			.attr('y', 20)
 			.attr('x', 0)
+			.attr('fill-opacity', 0)
 			.text('0') ;
 
 		data = [] ;
@@ -159,8 +161,6 @@ $(document).ready(function(){
 			}) ;
 
 			animatedData.push(data[0]) ;
-
-			console.log('data', data) ;
 
 			x.domain(d3.extent(data, function(d) { return d.year; }));
 
@@ -221,11 +221,8 @@ $(document).ready(function(){
 
 			$(window).scroll(function(){
 
-				var scrollPosition = $(document).scrollTop() ;
-
-				// console.log(startFixed, stopFixed, scrollPosition) ;
-
-				var $nextSection = $wrap.next('section'),
+				var scrollPosition = $(document).scrollTop(),
+					$nextSection = $wrap.next('section'),
 					nextSectionHeight = $nextSection.height(),
 					markerStart = 700 ;
 
@@ -251,34 +248,18 @@ $(document).ready(function(){
 
 				}
 
-				console.log('data from cl', data) ;
+				var newX = markerStart + (scrollPosition - startFixed),
+						progressInGraph = newX / width * 100,
+						markerOpacity = 1 - (width / progressInGraph) / 100 ;
 
-				console.log('width', width, 'nextSectionHeight', nextSectionHeight, 'scrollPosition', scrollPosition) ;
+				if(newX > 0){
+					marker.attr('x1', newX).attr('x2', newX).attr('stroke-opacity', markerOpacity) ;
+					markerLabel.attr('x', newX + 10).text(Math.round(x.invert(newX))).attr('fill-opacity', markerOpacity) ;
+				}
 
-				var newX = markerStart + (scrollPosition - startFixed) ;
-
-				console.log('newX', newX) ;
-
-				marker.attr('x1', newX).attr('x2', newX) ;
-				markerLabel.attr('x', newX + 10).text(Math.round(x.invert(newX))) ;
-
-				var progressInGraph = newX / width * 100 ;
-
-				console.log('progressInGraph', progressInGraph) ;
-
-				console.log('data length', data.length) ;
-
-				var roughRelatedIndex = progressInGraph * data.length / 100 ;
-
-				console.log('roughRelatedIndex', roughRelatedIndex) ;
-				
-				var relatedIndex = Math.floor(roughRelatedIndex) ;
-
-				console.log('relatedIndex', relatedIndex) ;
-
-				var relatedData = data[relatedIndex] ;
-
-				// animatedData = data.splice(0) ;
+				var roughRelatedIndex = progressInGraph * data.length / 100,
+						relatedIndex = Math.floor(roughRelatedIndex),
+						relatedData = data[relatedIndex] ;
 
 				animatedData = [] ;
 
@@ -288,27 +269,21 @@ $(document).ready(function(){
 
 				animatedData = animatedData.splice(0, relatedIndex) ;
 
-				console.log(relatedData) ;
-
-				console.log(animatedData) ;
-
-				christiansPathAnimated.datum(animatedData) // set the new data
-					.attr('transform', 'translate(' + x(1) + ')') // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value
+				christiansPathAnimated
+					.datum(animatedData) // set the new data
+					.transition() // start a transition to bring the new value into view
+					.ease('linear')
+					.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below
 					.attr('d', lineChristiansAnimated) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
-					.attr('test', 'updated')
-					.transition() // start a transition to bring the new value into view
-					.ease('linear')
-					.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below
-					.attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
+					// .attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
 
-				translatonsPathAnimated.datum(animatedData) // set the new data
-					.attr('transform', 'translate(' + x(1) + ')') // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value
-					.attr('d', lineTranslationsAnimated) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
-					.attr('test', 'updated')
+				translatonsPathAnimated
+					.datum(animatedData) // set the new data
 					.transition() // start a transition to bring the new value into view
 					.ease('linear')
 					.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below
-					.attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
+					.attr('d', lineTranslationsAnimated) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
+					// .attr('transform', 'translate(' + x(0) + ')'); // animate a slide to the left back to x(0) pixels to reveal the new value
 
 				// console.log('invert', x.invert(newX)));
 

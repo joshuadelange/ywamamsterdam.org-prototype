@@ -159,7 +159,7 @@ header {
 		// text-align: center;
 
 		font-size: 50px;
-		line-height: 25px;
+		line-height: 50px;
 
 		font-weight: 100;
 		clear: both;
@@ -196,9 +196,6 @@ header {
 			background-color: $highlightBgColor;
 			display: inline-block;
 			text-shadow: 1px 1px 1px #58181D;
-
-			border-right: 1px solid #73262E;
-			border-bottom: 1px solid #73262E;
 		}
 	}
 
@@ -2084,7 +2081,7 @@ footer {
 
 	padding: 0;
 
-	background-color: silver;
+	background-color: #ece7e6;
 
 	z-index: -10;
 
@@ -2111,37 +2108,45 @@ footer {
 
 	#gutenbergcanvas {
 
-		font: 10px sans-serif;
+		// font: 15px sans-serif;
 
 		.axis path,
 		.axis line {
 			fill: none;
-			stroke: #000;
+			stroke: #BDBDBD;
 			shape-rendering: crispEdges;
 		}
 
+		.y text {
+			font: 13px sans-serif;
+		}
+
+		.tick text {
+			color: #BDBDBD;
+		}
+
 		.marker {
-			stroke: #C70505;
+			stroke: #f88874;
 			stroke-width: 2px;
 		}
 
 		text.markerLabel {
-			fill: #C70505;
+			fill: #f88874;
 			font-size: 20px;
 		}
 
 		.person {
-			fill: green;
+			fill: #1693A5;
 		}
 
 		text.translations {
-			fill: steelblue;
+			fill: #8FBE00;
 			font-size: 15px;
 		}
 
 		path.translations {
 			fill: none;
-			stroke: steelblue;
+			stroke: #8FBE00;
 			stroke-width: 2px;
 		}
 
@@ -2152,13 +2157,13 @@ footer {
 		}
 
 		text.christians {
-			fill: green;
+			fill: #1693A5;
 			font-size: 15px;
 		}
 
 		path.christians {
 			fill: none;
-			stroke: green;
+			stroke: #1693A5;
 			stroke-width: 2px;
 		}
 
