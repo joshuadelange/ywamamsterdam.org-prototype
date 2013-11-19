@@ -31,6 +31,14 @@ $bodyColor: #313131;
 $bodyPadding: 230px;
 $headingColor: #333;
 
+
+$colorWhite: #F6F6F6;
+$colorWhoolWhite: #E8E8E8;
+$colorGrey: #333333;
+$colorDarkRed: #990100;
+$colorRed: #B90504;
+
+
 body, h1, h2, h3, h4, h5, h6, ul, li {
 	margin: 0;
 	padding: 0;
@@ -42,7 +50,7 @@ body {
 
 	font-size: 20px;
 	line-height: 29px;
-	background-color: $backgroundColor;
+	background-color: $colorWhoolWhite;
 
 	overflow-x: hidden;
 }
@@ -95,25 +103,30 @@ nav {
 				font-size: 17px;
 				color: #efefef;
 				text-decoration: none;
-				border-bottom: 1px solid #a4a4a4;
+				border-bottom: 1px solid #efefef;
 				padding-bottom: 0;
 				font-family: "Novecentowide-Light";
+				-webkit-transition: all 0.25s linear ;
+
+				text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+
 
 				&:hover {
 					color: white;
-					border-bottom-color: #efefef;
+					border-bottom: 1px solid #efefef;
+					padding-bottom: 5px;
 				}
 	
-				&.with-white-bg {
-					font-family: "Novecentowide-Normal" ;
-					font-size: 15px;
-					color: #474747;
-					border: none;
+				// &.with-white-bg {
+				// 	font-family: "Novecentowide-Normal" ;
+				// 	font-size: 15px;
+				// 	color: #474747;
+				// 	border: none;
 
-					&:hover {
-						border-bottom: 1px solid #474747 ;
-					}
-				}
+				// 	&:hover {
+				// 		border-bottom: 1px solid #474747 ;
+				// 	}
+				// }
 			}
 
 		}
@@ -146,65 +159,68 @@ header {
 	background-size: 100%;
 
 
-	h1 {
+	.slogan {
 
-		// font-family: "Expressway", sans-serif;
+		clear: both;
 
 		color: #f0f0f0;
 
 		position: absolute;
-		bottom: 50px;
+		bottom: 25%;
 		z-index: 100;
 
-		width: 500px;
+		width: 1100px;
 		// float: right;
-		// text-align: center;
+		text-align: center;
 
-		font-size: 50px;
+		font-size: 80px;
 		line-height: 50px;
-
-		font-weight: 100;
-		clear: both;
 
 		letter-spacing: 2.5px;
 
 		text-transform: uppercase;
 
-		word-break: keep-all;
 		text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
 
 		small {
-			// font-family: 'Novecentowide-Light', sans-serif;
+
+			display: inline-block;
+			max-width: 330px;
+
 			color: #CFCFCF;
-			font-size: 33px;
-			line-height: 25px;
-			// display: block;
+
+			font-size: 22px;
+			line-height: 29px;
+
 			font-weight: 100;
+
 		}
 
-		large {
-			// font-size: 70px;
-			// position: relative;
-			// top: -10px;
-			// bottom: -10px;
-
-			// font-weight: medium;
-
-			line-height: 65px;
-			font-size: 35px;
-			line-height: 50px;
-			color: #FAEAEA;
-			padding: 0 5px;
-			background-color: $highlightBgColor;
+		strong {
 			display: inline-block;
+
+			padding: 0 10px;
+			margin-bottom: 10px;
+
+			font-weight: 100;
+
+			font-size: 75px;
+			line-height: 78px;
+
+			color: #FAEAEA;
+			background-color: $highlightBgColor;
+
 			text-shadow: 1px 1px 1px #58181D;
 		}
 	}
 
 	.social {
+
 		position: absolute;
 			bottom: 50px;
-			right: 50px;
+			left: 50%;
+
+		margin-left: -125px;
 
 		z-index: 1000;
 	}
@@ -237,7 +253,7 @@ header {
 }
 
 h2 {
-	width: 0;
+	// width: 0;
 	color: #252525;
 	font-family: "Expressway";
 	font-size: 100px;
@@ -326,6 +342,10 @@ h2 {
 		clear: both;
 	}
 
+	h3 {
+		margin: 0;
+	}
+
 	&.thumbnails {
 
 		padding-top: 25px;
@@ -366,6 +386,10 @@ h2 {
 				width: $column2Width ;
 				margin-right: 0;
 				// padding-right: $column2Padding ;
+			}
+
+			h2 {
+				font-size: 55px;
 			}
 		}
 
@@ -635,14 +659,108 @@ section {
 		padding: 50px;
 	}
 
+	&.frontpage {
+
+		padding: 0 50px;
+
+		.column-2 {
+
+			width: 46.5% !important;
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			h2 {
+				margin-top: 10px;
+				margin-bottom: 0;
+			}
+
+			p.quote {
+				margin-top: 95px;
+			}
+
+			ul {
+				float: right;
+				width: 50%;
+
+				li {
+
+					padding: 0;
+					margin-bottom: 10px;
+					border-bottom: none;
+
+					&:before {
+						content: '► ' ;
+						color: $bodyColor;
+						border-bottom: none;
+						display: inline-block;
+						-webkit-transform: scale(0.5) ;
+					}
+
+					a {
+						display: inline-block;
+						color: $highlightColor;
+						border-bottom: 1px solid $highlightColor;
+
+					}
+
+					// a {
+					// 	padding: 0 5px;
+					// 	color: $colorWhite;
+					// 	background-color: $colorDarkRed;
+					// 	display: inline-block;
+
+					// 	&:hover {
+					// 		color: $highlightColor;
+					// 		background-color: transparent;
+					// 		border-bottom: 1px solid $highlightColor;
+					// 	}
+					// }
+				}
+			}
+
+			&:first-child {
+
+				margin-right: 0;
+				padding-right: 2.5%;
+
+				text-align: right;
+
+				background: url('/images/lighthouse.png') no-repeat;
+				background-size: contain;
+
+				border-right: 1px solid $border ;
+
+			}
+
+			&:last-child {
+
+				height: 335px;
+
+				line-height: 25px;
+
+				padding-left: 2.5%;
+
+				text-align: center;
+
+				background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7') ;
+				background-repeat: no-repeat;
+				background-size: 100%;
+		
+			}
+
+		}
+
+	}
+
 	&.center {
 		text-align: center;
 	}
 
 	&.world-map-as-bg {
-		background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xfbffff') ;
-		background-repeat: no-repeat;
-		background-size: 100%;
 	}
 
 	> h3 {
@@ -1358,7 +1476,7 @@ section {
 
 				opacity: 0;
 
-				background-color: $solidHighlightBgColor;
+				background-color: $colorDarkRed;
 
 				z-index: 500;
 
@@ -1766,12 +1884,16 @@ section {
 			// border-top: 1px solid #CECECE;
 			// border-bottom: 1px solid #CECECE;
 
-			font-size: 25px;
+			// color: $colorWhite;
+			// background-color: $colorRed;
+
+			// font-size: 25px;
+			font-size: 55px;
 			// text-align: center;
 
 			&:after {
-				content: '';
-				display: block;
+				content: ':';
+				// display: block;
 			}
 		}
 

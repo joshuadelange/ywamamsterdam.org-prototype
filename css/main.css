@@ -37,7 +37,7 @@ body {
   font-weight: 300;
   font-size: 20px;
   line-height: 29px;
-  background-color: #f7f7f7;
+  background-color: #e8e8e8;
   overflow-x: hidden; }
 
 .top {
@@ -72,19 +72,15 @@ nav {
         font-size: 17px;
         color: #efefef;
         text-decoration: none;
-        border-bottom: 1px solid #a4a4a4;
+        border-bottom: 1px solid #efefef;
         padding-bottom: 0;
-        font-family: "Novecentowide-Light"; }
+        font-family: "Novecentowide-Light";
+        -webkit-transition: all 0.25s linear;
+        text-shadow: 0px 0px 20px black; }
         nav ul li a:hover {
           color: white;
-          border-bottom-color: #efefef; }
-        nav ul li a.with-white-bg {
-          font-family: "Novecentowide-Normal";
-          font-size: 15px;
-          color: #474747;
-          border: none; }
-          nav ul li a.with-white-bg:hover {
-            border-bottom: 1px solid #474747; }
+          border-bottom: 1px solid #efefef;
+          padding-bottom: 5px; }
   nav.secondary {
     margin-top: -25px; }
 
@@ -100,38 +96,41 @@ header {
   padding-top: 10px;
   background-position: center top;
   background-size: 100%; }
-  header h1 {
+  header .slogan {
+    clear: both;
     color: #f0f0f0;
     position: absolute;
-    bottom: 50px;
+    bottom: 25%;
     z-index: 100;
-    width: 500px;
-    font-size: 50px;
+    width: 1100px;
+    text-align: center;
+    font-size: 80px;
     line-height: 50px;
-    font-weight: 100;
-    clear: both;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    word-break: keep-all;
     text-shadow: 0px 0px 20px black; }
-    header h1 small {
-      color: #CFCFCF;
-      font-size: 33px;
-      line-height: 25px;
-      font-weight: 100; }
-    header h1 large {
-      line-height: 65px;
-      font-size: 35px;
-      line-height: 50px;
-      color: #FAEAEA;
-      padding: 0 5px;
-      background-color: rgba(180, 19, 30, 0.55);
+    header .slogan small {
       display: inline-block;
+      max-width: 330px;
+      color: #CFCFCF;
+      font-size: 22px;
+      line-height: 29px;
+      font-weight: 100; }
+    header .slogan strong {
+      display: inline-block;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      font-weight: 100;
+      font-size: 75px;
+      line-height: 78px;
+      color: #FAEAEA;
+      background-color: rgba(180, 19, 30, 0.55);
       text-shadow: 1px 1px 1px #58181D; }
   header .social {
     position: absolute;
     bottom: 50px;
-    right: 50px;
+    left: 50%;
+    margin-left: -125px;
     z-index: 1000; }
 
 .video-wrapper {
@@ -152,7 +151,6 @@ header {
     width: 100%; }
 
 h2 {
-  width: 0;
   color: #252525;
   font-family: "Expressway";
   font-size: 100px;
@@ -214,6 +212,8 @@ h2 {
   content: '';
   display: block;
   clear: both; }
+.columns h3 {
+  margin: 0; }
 .columns.thumbnails {
   padding-top: 25px; }
   .columns.thumbnails > a[class*="column-"] {
@@ -233,6 +233,8 @@ h2 {
     .columns [class*="column-"].column-2:last-child {
       width: 50%;
       margin-right: 0; }
+    .columns [class*="column-"].column-2 h2 {
+      font-size: 55px; }
   .columns [class*="column-"].column-3 {
     width: 28%;
     margin-right: 5%; }
@@ -383,12 +385,53 @@ section {
   z-index: 1000; }
   section.wide {
     padding: 50px; }
+  section.frontpage {
+    padding: 0 50px; }
+    section.frontpage .column-2 {
+      width: 46.5% !important; }
+      section.frontpage .column-2:after {
+        content: '';
+        display: block;
+        clear: both; }
+      section.frontpage .column-2 h2 {
+        margin-top: 10px;
+        margin-bottom: 0; }
+      section.frontpage .column-2 p.quote {
+        margin-top: 95px; }
+      section.frontpage .column-2 ul {
+        float: right;
+        width: 50%; }
+        section.frontpage .column-2 ul li {
+          padding: 0;
+          margin-bottom: 10px;
+          border-bottom: none; }
+          section.frontpage .column-2 ul li:before {
+            content: '► ';
+            color: #313131;
+            border-bottom: none;
+            display: inline-block;
+            -webkit-transform: scale(0.5); }
+          section.frontpage .column-2 ul li a {
+            display: inline-block;
+            color: #e4001c;
+            border-bottom: 1px solid #e4001c; }
+      section.frontpage .column-2:first-child {
+        margin-right: 0;
+        padding-right: 2.5%;
+        text-align: right;
+        background: url("/images/lighthouse.png") no-repeat;
+        background-size: contain;
+        border-right: 1px solid #cecece; }
+      section.frontpage .column-2:last-child {
+        height: 335px;
+        line-height: 25px;
+        padding-left: 2.5%;
+        text-align: center;
+        background-image: url("http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7");
+        background-repeat: no-repeat;
+        background-size: 100%; }
   section.center {
     text-align: center; }
-  section.world-map-as-bg {
-    background-image: url("http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xfbffff");
-    background-repeat: no-repeat;
-    background-size: 100%; }
   section > h3 {
     display: block; }
   section.with-striped-bg {
@@ -835,7 +878,7 @@ section {
         width: 100%;
         height: 270px;
         opacity: 0;
-        background-color: #b4131e;
+        background-color: #990100;
         z-index: 500;
         -webkit-transition: opacity ease-out 0.5s; }
         section.grid .tile .rollover h3, section.grid .tile .rollover h4, section.grid .tile .rollover p, section.grid .tile .rollover a {
@@ -1062,10 +1105,9 @@ section {
       margin-left: 2%;
       margin-bottom: 30px;
       padding: 10px 0;
-      font-size: 25px; }
+      font-size: 55px; }
       section.circles > h3:after {
-        content: '';
-        display: block; }
+        content: ':'; }
     section.circles .circle {
       width: 27%;
       height: 100%;
