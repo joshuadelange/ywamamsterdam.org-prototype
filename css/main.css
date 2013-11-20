@@ -340,12 +340,12 @@ a {
 
 .btn-group {
   display: block;
-  margin-bottom: 15px; }
+  margin-bottom: 30px; }
   .btn-group .label {
-    display: block;
     color: #525252;
     font-style: normal;
     width: auto !important;
+    display: block;
     line-height: 35px;
     margin-right: 10px; }
   .btn-group a.btn {
@@ -412,17 +412,38 @@ section {
   z-index: 1000; }
   section.wide {
     padding: 50px; }
-  section.frontpage > h3 {
-    clear: both;
-    margin-bottom: 30px;
-    padding: 10px 0;
-    font-size: 55px; }
-  section.frontpage .column-2 {
-    width: 44% !important;
-    margin: 0;
+  section.frontpage {
     padding: 0; }
-    section.frontpage .column-2:first-of-type {
-      border-right: 1px solid #cecece; }
+    section.frontpage .column-2 {
+      width: 34% !important;
+      min-height: 280px; }
+      section.frontpage .column-2:after {
+        content: '';
+        display: block;
+        clear: both; }
+      section.frontpage .column-2 h3 {
+        font-size: 45px;
+        margin-top: 25px;
+        margin-bottom: 25px; }
+      section.frontpage .column-2 p.quote {
+        margin-top: 40px; }
+      section.frontpage .column-2:first-child {
+        line-height: 25px;
+        margin-right: 0;
+        padding: 100px;
+        text-align: center;
+        background-image: url("http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7");
+        background-repeat: no-repeat;
+        background-size: 103%;
+        border-right: 1px solid #cecece; }
+        section.frontpage .column-2:first-child h3 {
+          text-align: left; }
+      section.frontpage .column-2:last-child {
+        padding: 100px;
+        text-align: left;
+        background: url("/images/lighthouse-mirrored.png") no-repeat;
+        background-position: right center;
+        background-size: contain; }
   section.center {
     text-align: center; }
   section > h3 {

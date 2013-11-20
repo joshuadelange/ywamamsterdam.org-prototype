@@ -582,14 +582,14 @@ a {
 .btn-group {
 
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 
 	.label {
-		display: block;
 		color: #525252;
 		font-style: normal;
 		width: auto !important;
 		// float: left;
+		display: block;
 		line-height: 35px;
 		margin-right: 10px;
 	}
@@ -708,29 +708,60 @@ section {
 
 	&.frontpage {
 
-		// padding: 0;
-
-		> h3 {
-
-			clear: both;
-
-			margin-bottom: 30px;
-
-			padding: 10px 0;
-
-			font-size: 55px;
-
-		}
+		padding: 0;
 
 		.column-2 {
 
-			width: 44% !important;
+			width: 34% !important;
+			min-height: 280px;
 
-			margin: 0;
-			padding: 0;
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
 
-			&:first-of-type {
+			h3 {
+				font-size: 45px;
+				margin-top: 25px;
+				margin-bottom: 25px;
+			}
+
+			p.quote {
+				margin-top: 40px;
+			}
+
+			&:first-child {
+
+				line-height: 25px;
+
+				margin-right: 0;
+				padding: 100px;
+
+				text-align: center;
+
+				background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7') ;
+				background-repeat: no-repeat;
+				background-size: 103%;
+
 				border-right: 1px solid $border ;
+
+				h3 {
+					text-align: left;
+				}
+
+			}
+
+			&:last-child {
+
+				padding: 100px;
+
+				text-align: left;
+
+				background: url('/images/lighthouse-mirrored.png') no-repeat;
+				background-position: right center;
+				background-size: contain;
+
 			}
 
 		}
