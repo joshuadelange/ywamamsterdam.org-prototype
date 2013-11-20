@@ -51,7 +51,7 @@ body {
   z-index: 1000000;
   border-bottom: 2px solid transparent; }
   .top .logo {
-    width: 250px;
+    width: 175px;
     height: 100px;
     float: left;
     background-image: url("../images/logo.png");
@@ -70,16 +70,16 @@ nav {
       nav ul li a {
         display: inline-block;
         font-size: 17px;
-        color: #efefef;
+        color: #f4f4f4;
         text-decoration: none;
-        border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid #f4f4f4;
         padding-bottom: 0;
         font-family: "Novecentowide-Light";
         -webkit-transition: all 0.25s linear;
         text-shadow: 0px 0px 20px black; }
         nav ul li a:hover {
           color: white;
-          border-bottom: 1px solid #efefef;
+          border-bottom: 1px solid #f4f4f4;
           padding-bottom: 5px; }
   nav.secondary {
     margin-top: -25px; }
@@ -323,15 +323,42 @@ a {
   color: #e4001c;
   text-decoration: none;
   border-bottom: 1px solid #e4001c; }
+  a:hover {
+    color: #990100;
+    border-bottom: 1px solid #990100; }
   a.btn {
     display: inline-block;
     margin-top: 10px;
     padding: 2px 15px;
     border: 1px solid #e4001c;
-    border-radius: 5px; }
-  a:hover {
-    color: #b10016;
-    border-color: #b10016; }
+    border-radius: 5px;
+    -webkit-transition: all .6s ease; }
+    a.btn:hover {
+      color: #f6f6f6;
+      background-color: #b90504;
+      border-color: #b90504; }
+
+.btn-group {
+  display: block;
+  margin-bottom: 15px; }
+  .btn-group .label {
+    color: #525252;
+    font-style: normal;
+    width: auto !important;
+    float: left;
+    line-height: 35px;
+    margin-right: 10px; }
+  .btn-group a.btn {
+    margin-top: 0;
+    margin-right: -7px;
+    line-height: 35px;
+    border-radius: 0; }
+    .btn-group a.btn:first-of-type {
+      border-radius: 5px 0 0 5px; }
+    .btn-group a.btn:last-of-type {
+      border-radius: 0 5px 5px 0; }
+    .btn-group a.btn:first-of-type:last-of-type {
+      border-radius: 5px; }
 
 h3 {
   font-family: "Expressway", sans-serif;
@@ -386,18 +413,20 @@ section {
   section.wide {
     padding: 50px; }
   section.frontpage {
-    padding: 0 50px; }
+    padding: 0; }
     section.frontpage .column-2 {
-      width: 46.5% !important; }
+      width: 39.95% !important;
+      min-height: 335px;
+      padding: 75px 0; }
       section.frontpage .column-2:after {
         content: '';
         display: block;
         clear: both; }
-      section.frontpage .column-2 h2 {
-        margin-top: 10px;
-        margin-bottom: 0; }
+      section.frontpage .column-2 h3 {
+        margin-top: 25px;
+        margin-bottom: 25px; }
       section.frontpage .column-2 p.quote {
-        margin-top: 95px; }
+        margin-top: 40px; }
       section.frontpage .column-2 ul {
         float: right;
         width: 50%; }
@@ -416,56 +445,28 @@ section {
             color: #e4001c;
             border-bottom: 1px solid #e4001c; }
       section.frontpage .column-2:first-child {
-        margin-right: 0;
-        padding-right: 2.5%;
-        text-align: right;
-        background: url("/images/lighthouse.png") no-repeat;
-        background-size: contain;
-        border-right: 1px solid #cecece; }
-      section.frontpage .column-2:last-child {
-        height: 335px;
         line-height: 25px;
+        margin-right: 0;
+        padding: 0 5%;
         padding-left: 2.5%;
         text-align: center;
         background-image: url("http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7");
         background-repeat: no-repeat;
-        background-size: 100%; }
+        background-size: 100%;
+        border-right: 1px solid #cecece; }
+        section.frontpage .column-2:first-child h3 {
+          text-align: left; }
+      section.frontpage .column-2:last-child {
+        padding: 0 5%;
+        padding-left: 2.5%;
+        text-align: left;
+        background: url("/images/lighthouse-mirrored.png") no-repeat;
+        background-position: right center;
+        background-size: contain; }
   section.center {
     text-align: center; }
   section > h3 {
     display: block; }
-  section.with-striped-bg {
-    overflow: hidden; }
-    section.with-striped-bg .stripes {
-      clear: both;
-      position: relative;
-      z-index: 0;
-      float: left;
-      width: 2000px;
-      margin-top: -180px;
-      margin-left: -200px; }
-      section.with-striped-bg .stripes .stripe {
-        float: left;
-        width: 1px;
-        height: 200px;
-        margin-right: 30px;
-        -webkit-transform: rotate(35deg);
-        background: #f7f7f7;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #f7f7f7 0%, #cecece 79%);
-        /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(79%, #cecece));
-        /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top, #f7f7f7 0%, #cecece 79%);
-        /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top, #f7f7f7 0%, #cecece 79%);
-        /* Opera 11.10+ */
-        background: -ms-linear-gradient(top, #f7f7f7 0%, #cecece 79%);
-        /* IE10+ */
-        background: linear-gradient(to bottom, #f7f7f7 0%, #cecece 79%);
-        /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#cecece',GradientType=0 );
-        /* IE6-9 */ }
   section .slogan {
     font-family: "Expressway", sans-serif;
     text-transform: uppercase;
@@ -1106,8 +1107,6 @@ section {
       margin-bottom: 30px;
       padding: 10px 0;
       font-size: 55px; }
-      section.circles > h3:after {
-        content: ':'; }
     section.circles .circle {
       width: 27%;
       height: 100%;
