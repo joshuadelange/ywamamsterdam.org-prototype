@@ -581,8 +581,9 @@ a {
 
 .btn-group {
 
-	display: block;
-	margin-bottom: 15px;
+	display: inline-block;
+	margin-left: 20px;
+	// margin-bottom: 15px;
 
 	.label {
 		color: #525252;
@@ -596,7 +597,7 @@ a {
 	a.btn {
 
 		margin-top: 0;
-		margin-right: -7px;
+		margin-right: -27px;
 
 		line-height: 35px;
 
@@ -706,107 +707,11 @@ section {
 	}
 
 	&.frontpage {
+		padding: 25px 0;
 
-		padding: 0;
-
-		.column-2 {
-
-			width: 39.95% !important;
-			min-height: 335px;
-			padding: 75px 0;
-
-			&:after {
-				content: '';
-				display: block;
-				clear: both;
-			}
-
-			h3 {
-				margin-top: 25px;
-				margin-bottom: 25px;
-			}
-
-			p.quote {
-				margin-top: 40px;
-			}
-
-			ul {
-				float: right;
-				width: 50%;
-
-				li {
-
-					padding: 0;
-					margin-bottom: 10px;
-					border-bottom: none;
-
-					&:before {
-						content: '► ' ;
-						color: $bodyColor;
-						border-bottom: none;
-						display: inline-block;
-						-webkit-transform: scale(0.5) ;
-					}
-
-					a {
-						display: inline-block;
-						color: $highlightColor;
-						border-bottom: 1px solid $highlightColor;
-
-					}
-
-					// a {
-					// 	padding: 0 5px;
-					// 	color: $colorWhite;
-					// 	background-color: $colorDarkRed;
-					// 	display: inline-block;
-
-					// 	&:hover {
-					// 		color: $highlightColor;
-					// 		background-color: transparent;
-					// 		border-bottom: 1px solid $highlightColor;
-					// 	}
-					// }
-				}
-			}
-
-			&:first-child {
-
-				line-height: 25px;
-
-				margin-right: 0;
-				padding: 0 5%;
-				padding-left: 2.5%;
-
-				text-align: center;
-
-				background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7') ;
-				background-repeat: no-repeat;
-				background-size: 100%;
-
-				border-right: 1px solid $border ;
-
-				h3 {
-					text-align: left;
-				}
-
-			}
-
-			&:last-child {
-
-				padding: 0 5%;
-				padding-left: 2.5%;
-
-				text-align: left;
-
-				background: url('/images/lighthouse-mirrored.png') no-repeat;
-				background-position: right center;
-				background-size: contain;
-
-			}
-
+		a {
+			margin-left: 20px;
 		}
-
 	}
 
 	&.center {
