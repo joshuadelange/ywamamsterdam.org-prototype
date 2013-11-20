@@ -71,6 +71,36 @@ body {
 
 	border-bottom: 2px solid transparent;
 
+	// .logo h1 {
+
+	// 	width: 200px;
+	// 	float: left;
+
+	// 	color: #f0f0f0;
+
+	// 	font-size: 20px;
+	// 	line-height: 50px;
+	// 	font-weight: 100;
+
+	// 	letter-spacing: 2.5px;
+
+	// 	text-transform: uppercase;
+
+	// 	text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+
+	// 	.highlighted {
+
+	// 		display: inline-block;
+
+	// 		color: #FAEAEA;
+	// 		background-color: $highlightBgColor;
+
+	// 		text-shadow: 1px 1px 1px #58181D;
+
+	// 	}
+
+	// }
+
 	.logo {
 		width: 175px;
 		height: 100px;
@@ -80,7 +110,6 @@ body {
 		background-size: 100%;
 		background-repeat: no-repeat;
 	}
-
 
 }
 
@@ -217,10 +246,8 @@ header {
 	.social {
 
 		position: absolute;
+			right: 50px;
 			bottom: 50px;
-			left: 50%;
-
-		margin-left: -125px;
 
 		z-index: 1000;
 	}
@@ -733,21 +760,29 @@ section {
 
 			&:first-child {
 
+				width: 42% !important;
+
 				line-height: 25px;
 
 				margin-right: 0;
-				padding: 100px;
+				padding: 50px;
 
-				text-align: center;
+				text-align: left;
 
-				background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=19.973349,-1.054687&zoom=1&format=png&sensor=false&size=640x480&maptype=roadmap&visual_refresh=true&style=feature:administrative|visibility:off&style=feature:landscape|invert_lightness:true|saturation:-95|lightness:78&style=feature:water|color:0xf7f7f7') ;
+				background-image: url('/photos/gutenberg/thedude.jpg') ;
 				background-repeat: no-repeat;
-				background-size: 103%;
+				background-size: 110%;
 
 				border-right: 1px solid $border ;
 
 				h3 {
-					text-align: left;
+					width: 85%;
+					margin: 0;
+					line-height: normal;
+				}
+
+				p {
+					width: 55%;
 				}
 
 			}
@@ -1850,6 +1885,8 @@ section {
 			margin-bottom: 30px;
 
 			padding: 10px 0;
+
+			text-align: center;
 
 			// border-top: 1px solid #CECECE;
 			// border-bottom: 1px solid #CECECE;
