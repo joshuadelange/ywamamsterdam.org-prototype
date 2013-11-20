@@ -339,18 +339,18 @@ a {
       border-color: #b90504; }
 
 .btn-group {
-  display: inline-block;
-  margin-left: 20px; }
+  display: block;
+  margin-bottom: 15px; }
   .btn-group .label {
+    display: block;
     color: #525252;
     font-style: normal;
     width: auto !important;
-    float: left;
     line-height: 35px;
     margin-right: 10px; }
   .btn-group a.btn {
     margin-top: 0;
-    margin-right: -27px;
+    margin-right: -7px;
     line-height: 35px;
     border-radius: 0; }
     .btn-group a.btn:first-of-type {
@@ -412,10 +412,17 @@ section {
   z-index: 1000; }
   section.wide {
     padding: 50px; }
-  section.frontpage {
-    padding: 25px 0; }
-    section.frontpage a {
-      margin-left: 20px; }
+  section.frontpage > h3 {
+    clear: both;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    font-size: 55px; }
+  section.frontpage .column-2 {
+    width: 44% !important;
+    margin: 0;
+    padding: 0; }
+    section.frontpage .column-2:first-of-type {
+      border-right: 1px solid #cecece; }
   section.center {
     text-align: center; }
   section > h3 {

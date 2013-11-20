@@ -581,15 +581,15 @@ a {
 
 .btn-group {
 
-	display: inline-block;
-	margin-left: 20px;
-	// margin-bottom: 15px;
+	display: block;
+	margin-bottom: 15px;
 
 	.label {
+		display: block;
 		color: #525252;
 		font-style: normal;
 		width: auto !important;
-		float: left;
+		// float: left;
 		line-height: 35px;
 		margin-right: 10px;
 	}
@@ -597,7 +597,7 @@ a {
 	a.btn {
 
 		margin-top: 0;
-		margin-right: -27px;
+		margin-right: -7px;
 
 		line-height: 35px;
 
@@ -707,11 +707,34 @@ section {
 	}
 
 	&.frontpage {
-		padding: 25px 0;
 
-		a {
-			margin-left: 20px;
+		// padding: 0;
+
+		> h3 {
+
+			clear: both;
+
+			margin-bottom: 30px;
+
+			padding: 10px 0;
+
+			font-size: 55px;
+
 		}
+
+		.column-2 {
+
+			width: 44% !important;
+
+			margin: 0;
+			padding: 0;
+
+			&:first-of-type {
+				border-right: 1px solid $border ;
+			}
+
+		}
+
 	}
 
 	&.center {
