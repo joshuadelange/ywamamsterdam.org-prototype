@@ -760,29 +760,26 @@ section {
 
 			&:first-child {
 
-				width: 42% !important;
-
 				line-height: 25px;
 
 				margin-right: 0;
-				padding: 50px;
+				padding: 100px;
 
 				text-align: left;
 
 				background-image: url('/photos/gutenberg/thedude.jpg') ;
 				background-repeat: no-repeat;
-				background-size: 110%;
+				background-size: 106%;
 
 				border-right: 1px solid $border ;
 
-				h3 {
-					width: 85%;
-					margin: 0;
-					line-height: normal;
+				h3, p {
+					width: 55%;
 				}
 
-				p {
-					width: 55%;
+				h3 {
+					margin-top: 0;
+					line-height: normal;
 				}
 
 			}
