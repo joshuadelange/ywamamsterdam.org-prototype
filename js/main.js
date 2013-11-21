@@ -299,46 +299,129 @@ $(document).ready(function(){
 
 		});
 
-		$(window).scroll(function(){
-
-
-			/*
-			var headerHeight = 720,
-				scrollTop = $(document).scrollTop(),
-				opacity = (700 / scrollTop) / 10,
-				marginTop = 20 - scrollTop,
-				reverseOpacity = 0.95 - opacity ;
-
-			if(reverseOpacity === -Infinity) {
-			  reverseOpacity = 0;
-			}
-
-			if(marginTop > 0){
-			  $('.top').css('marginTop', 20 - scrollTop + 'px') ;
-			}
-			else {
-			  $('.top').css('marginTop', 0 + 'px') ;
-			}
-
-			if(opacity > 0) {
-
-			  $('.top').css('backgroundColor', 'rgba(247, 247, 247, ' + reverseOpacity + ')') ;
-			  $('.top').css('borderBottomColor', 'rgba(226, 226, 226, ' + reverseOpacity + ')') ;
-
-			  if(opacity > 0.45) {
-				$('.top nav ul li a').removeClass('with-white-bg') ;
-			  }
-			  else {
-				$('.top nav ul li a').addClass('with-white-bg') ;
-			  }
-
-			}
-			*/
-
-		}) ;
-	
 	}
 
+	console.log('before binding') ;
+
+	var $nav = $('nav.primary'),
+			$list = $nav.find('ul'),
+			$listItems = $list.find('li'),
+			$listLinks = $listItems.find('a'),
+			$icon = $nav.find('.icon') ;
+
+	$nav.hidingTimeout = null ;
+
+	$nav.hover(function(){
+
+		console.log('hover!', $(document).scrollTop()) ;
+
+		if($nav.hidingTimeout !== null) {
+			console.log('clearing timeout') ;
+			clearTimeout($nav.hidingTimeout) ;
+		}
+
+		if($(document).scrollTop() > 100) {
+
+			$icon.animate({width: '770px'}) ;
+			$list.animate({'marginRight': '70px'}) ;
+
+			$listLinks.css({'color': '#D6D6D6'}) ;
+
+			$listItems.animate({
+				marginLeft: '30px',
+				opacity: 1
+			}) ;
+
+		}
+
+	}, function(){
+
+		$nav.hidingTimeout = setTimeout(function(){
+	
+			if($(document).scrollTop() > 100) {
+
+				$listLinks.css({'color': '#F4F4F4'}) ;
+				$icon.animate({width: '27px'}) ;
+				$list.animate({'marginRight': '0'}) ;
+				$listItems.animate({
+					marginLeft: '-90px',
+					opacity: 0
+				}) ;
+			
+			}
+			
+		}, 2000) ;
+		
+	}) ;
+
+	$(window).scroll(function(){
+
+		var transitionDoneAtHeight = 100,
+				scrollTop = $(document).scrollTop(),
+				percentageDone = ((scrollTop < 100) ? scrollTop : 100),
+				newMarginLeft = transitionDoneAtHeight - scrollTop - 70,
+				// normalMarginLeft = 30,
+				listOpacity = 1 - (percentageDone / 100),
+				iconOpacity = (percentageDone / 100) ;
+
+		console.log('newMarginLeft', newMarginLeft, 'transitionDoneAtHeight', transitionDoneAtHeight, 'scrollTop', scrollTop, 'percentage done', percentageDone, 'opacity', listOpacity) ;
+
+		if(scrollTop > 0) {
+
+			if(newMarginLeft > -90) {
+
+				$listItems.css({
+					marginLeft: newMarginLeft + 'px',
+					opacity: listOpacity
+				}) ;
+
+			}
+
+			$icon.css('opacity', iconOpacity) ;
+
+			console.log('show menu thingy') ;
+
+		}
+		else {
+			$listItems.attr('style', '') ;
+		}
+
+
+		/*
+		var headerHeight = 720,
+			scrollTop = $(document).scrollTop(),
+			opacity = (700 / scrollTop) / 10,
+			marginTop = 20 - scrollTop,
+			reverseOpacity = 0.95 - opacity ;
+
+		if(reverseOpacity === -Infinity) {
+		  reverseOpacity = 0;
+		}
+
+		if(marginTop > 0){
+		  $('.top').css('marginTop', 20 - scrollTop + 'px') ;
+		}
+		else {
+		  $('.top').css('marginTop', 0 + 'px') ;
+		}
+
+		if(opacity > 0) {
+
+		  $('.top').css('backgroundColor', 'rgba(247, 247, 247, ' + reverseOpacity + ')') ;
+		  $('.top').css('borderBottomColor', 'rgba(226, 226, 226, ' + reverseOpacity + ')') ;
+
+		  if(opacity > 0.45) {
+			$('.top nav ul li a').removeClass('with-white-bg') ;
+		  }
+		  else {
+			$('.top nav ul li a').addClass('with-white-bg') ;
+		  }
+
+		}
+		*/
+
+	}) ;
+	
 	$('video').bind('playing', function(){
 		$(this).show() ;
 		$(this).parent().find('img').remove() ;
